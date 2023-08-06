@@ -31,26 +31,23 @@ const WhyUs = () => {
     return (
         <div className='mt-14 text-center'>
             <div className='m-auto'>
-                <h1 className='text-[#fc6a03] text-[2rem] font-semibold tracking-widest leading-[3rem]'>
+                <h1 className='text-[#fc6a03] sm:text-[2rem] font-semibold tracking-widest sm:leading-[3rem]'>
                     Someone somewhere is in need!<br /> Make<br />
-                    <span className='font-extrabold leading-[3rem]'> 'GIVE THE NEEDY APP' </span>
+                    <span className='font-extrabold sm:leading-[3rem]'> 'GIVE THE NEEDY APP' </span>
                     <br />Your Extended hand to give cheerfully from your comfort!
                 </h1>
             </div>
-            <div className='flex gap-2 mx-10 mt-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-10 my-5'>
                 {contents.map((item) => {
                     return (
-                        <div className=' rounded-lg px-5 py-10 w-[25%] my-10 box-shadow cursor-default'>
+                        <div className=' rounded-lg px-5 py-10 w-full lg:my-10 box-shadow cursor-default'>
                             <img className="w-[3rem] m-auto" src={item.image} alt="icon" />
                             <h3 className='font-bold my-4'>{item.title}</h3>
                             <p>{item.content}</p>
                         </div>
                     )
                 })}
-
-
             </div>
-
         </div>
     )
 }

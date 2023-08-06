@@ -12,29 +12,9 @@
     text-shadow: 10px 2px 20px rgba(0, 0, 0, .54);
 }
 
-li {
-    position: relative;
-}
 
-li:after {
-    content: "";
-    position: absolute;
-    background-color: black;
-    height: 2px;
-    width: 0;
-    left: 0px;
-    bottom: 1px;
-    transition: .3s;
-}
 
-li:hover::after {
-    width: 100%;
-    color: black;
-}
-
-.active::after {
-    content: "";
-    color: black;
-    height: 2px;
-    width: 100%;
+.active {
+    text-decoration: overline;
+    /* color: var(--primaryColor); */
 }

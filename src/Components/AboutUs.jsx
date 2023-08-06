@@ -6,15 +6,15 @@ const AboutUs = () => {
     return (
         <>
             <div className='w-full'>
-                <div className='my-20 w-full h-[50%] px-20 '>
-                    <h1 className='text-[#fc6a03] text-[3rem] font-bold text-center'>About Us</h1>
-                    <hr className='w-1/2 m-auto border-[var(--primaryColor)] border' />
+                <div className='my-20 w-full h-[50%] px-5 sm:px-20 '>
+                    <h1 className='text-[#fc6a03] text-2xl sm:text-[3rem] font-bold text-center'>About Us</h1>
+                    <hr className='w-1/2 sm:mt-5 m-auto border-[var(--primaryColor)] border' />
 
-                    <div className='card bg-gray-100 flex mt-10 rounded-lg'>
-                        <div className='p-5'>
+                    <div className='card bg-gray-100 lg:flex mt-10 rounded-lg'>
+                        <div className='px-5 py-5'>
                             <img className='rounded-lg' src={team} alt="the_team" />
                         </div>
-                        <div className='px-10 py-5 tracking-wider leading-9 text-justify'>
+                        <div className='px-5 pb-2 sm:py-5 tracking-wider leading-5 sm:leading-9 text-justify text-xs sm:text-base'>
                             <p>
                                 At GiveTheNeedy, we are passionate about making a long-term,
                                 positive impact on society. Our mission is to bridge the
