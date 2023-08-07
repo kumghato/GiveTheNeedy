@@ -35,9 +35,9 @@ const Footer = () => {
               <p className='text-xs sm:text-base'>support@givetheneedy.org.in</p>
             </div>
           </div>
-          <div className='ms-auto md:me-20'>
-            <img src={logo} alt='logo' className='m-auto w-20 sm:w-40' />
-            <h4 className='font-bold text-center mt-40 text-sm'>Download the App!!</h4>
+          <div className='flex flex-col ms-auto lg:me-20 justify-center'>
+            <img src={logo} alt='logo' className='mx-auto w-20 sm:w-40' />
+            <h4 className='font-bold text-center mt-20 text-[0.6rem] md:text-sm'>Download the App!!</h4>
             <div className='flex items-center h-20'>
               <img className='object-cover w-20 sm:w-40 cursor-pointer' src={AppStore} alt='logo' />
               <img className='object-cover w-20 sm:w-40 cursor-pointer' src={playstore} alt='logo' />

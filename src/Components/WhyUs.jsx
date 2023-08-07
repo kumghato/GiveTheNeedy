@@ -29,7 +29,7 @@ const WhyUs = () => {
         },
     ]
     return (
-        <div className='mt-14 text-center'>
+        <div className='mt-5 md:mt-14 text-center'>
             <div className='m-auto'>
                 <h1 className='text-[#fc6a03] sm:text-[2rem] font-semibold tracking-widest sm:leading-[3rem]'>
                     Someone somewhere is in need!<br /> Make<br />
