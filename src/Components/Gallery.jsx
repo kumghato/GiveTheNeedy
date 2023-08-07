@@ -27,8 +27,8 @@ const Gallery = () => {
                         {cards.map((item) => {
                             return (
                                 <div className='box-shadow p-5 rounded-lg text-center pb-20'>
-                                    <h1 className='text-xl sm:text-4xl font-bold'>{item.title}</h1>
-                                    <img src={logo} alt="logo" className='m-auto mb-10' />
+                                    <h1 className='text-xl sm:text-4xl font-bold text-[var(--primaryColor)]'>{item.title}</h1>
+                                    <img src={logo} alt="logo" className='m-auto my-10' />
                                     <Link to={"/video-gallery"}
                                         className='bg-[var(--primaryColor)] px-4 py-2 text-white rounded-lg mt-10 hover:bg-white hover:border-[var(--primaryColor)] hover:border hover:text-[var(--primaryColor)]'>
                                         {item.buttonText}

@@ -18,3 +18,7 @@
     text-decoration: overline;
     /* color: var(--primaryColor); */
 }
+
+.nav {
+    transition: .3s, ease-in-out;
+}

@@ -37,7 +37,7 @@ const WhyUs = () => {
                     <br />Your Extended hand to give cheerfully from your comfort!
                 </h1>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-10 my-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-5 lg:mx-10 my-5'>
                 {contents.map((item) => {
                     return (
                         <div className=' rounded-lg px-5 py-10 w-full lg:my-10 box-shadow cursor-default'>

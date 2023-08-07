@@ -6,7 +6,11 @@ import Footer from './Footer';
 const Contact = () => {
     return (
         <>
-            <div className='container flex mt-20 mb-10'>
+            <div className='mt-20'>
+                <h1 className='text-[#fc6a03] text-2xl sm:text-[3rem] font-bold text-center'>Contact</h1>
+                <hr className='w-1/2 sm:mt-5 m-auto border-[var(--primaryColor)] border' />
+            </div>
+            <div className='container flex mt-20 mb-10 m-auto'>
                 <div className='border my-3 lg:flex m-auto w-[80%]'>
                     <div className='lg:w-1/2'>
                         <form className='flex flex-col p-10 gap-2'>
