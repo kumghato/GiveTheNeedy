@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-
 .box-shadow {
     box-shadow: 5px 2px 20px rgba(0, 0, 0, 50%);
 }
@@ -12,13 +11,7 @@
     text-shadow: 10px 2px 20px rgba(0, 0, 0, .54);
 }
 
-
-
 .active {
     text-decoration: overline;
     /* color: var(--primaryColor); */
-}
-
-.nav {
-    transition: .3s, ease-in-out;
 }
