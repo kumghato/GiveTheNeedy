@@ -24,7 +24,7 @@ const Contact = () => {
                     <hr className='w-3/5 lg:w-0 h-0 lg:h-3/5 m-auto border border-gray-400' />
                     <div className='lg:w-1/2'>
                         <div className='p-10 flex flex-col'>
-                            <h5 className='text-start mb-10 font-bold m-auto'>
+                            <h5 className='text-sm md:text-lg text-start mb-10 font-bold m-auto'>
                                 For any inquiries, please contact us at
                             </h5 >
                             <div className='my:2 lg:my-4'>
