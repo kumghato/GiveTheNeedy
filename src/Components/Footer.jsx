@@ -24,9 +24,9 @@ const Footer = () => {
         <div className='text-center'>
           <h3 className='font-bold sm:text-[1.5rem] m-auto mb-10'>GiveTheNeedy is a platform to connect donors and recievers for impactful giving.</h3>
         </div>
-        <div className='container'>
+        <div className=' m-auto w-full'>
 
-          <div id='row-1' className=' flex justify-between sm:px-20'>
+          <div id='row-1' className=' flex justify-between '>
             <div className='gap-2 w-full'>
               <div className='flex items-center gap-2 '>
                 <h4 className='font-bold text-[0.6rem] sm:text-xl'>Find us</h4>
@@ -58,7 +58,7 @@ const Footer = () => {
           {/*====================================================================================*/}
 
 
-          <div id="row-2" className='my-5 flex  justify-between sm:px-20'>
+          <div id="row-2" className='my-5 flex  justify-between '>
             <div className='w-full'>
               <div className='flex items-center gap-2 '>
                 <h4 className='font-bold text-[0.6rem] sm:text-xl '>Contact us</h4>
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
 
           {/*====================================================================================*/}
-          <div id='row-3' className='flex justify-between sm:px-20'>
+          <div id='row-3' className='flex justify-between'>
 
             <div className='mb-5 gap-2 w-full'>
               <div className='flex items-center gap-2 '>
@@ -84,8 +84,14 @@ const Footer = () => {
             <div className='flex flex-col w-full'>
               <h4 className='font-bold text-center text-[0.6rem] sm:text-xl'>Download the App!!</h4>
               <div className='flex justify-center px-2 gap-1 md:gap-2 mt-2 text-[0.5rem] sm:text-base'>
-                <a href="" className='bg-black flex py-1 md:py-2 px-2 md:px-4 items-center rounded-lg gap-2'><FaApple />Download</a>
-                <a href="" className='bg-black flex py-1 md:py-2 px-2 md:px-4 items-center rounded-lg gap-2'><FaGooglePlay />Download</a>
+                <a href="" className='bg-black flex py-1 md:py-2 px-4 md:px-6 items-center rounded md:rounded-lg gap-2 '>
+                  <FaApple />
+                  <span className='lg:flex hidden'>Download</span>
+                </a>
+                <a href="" className='bg-black flex py-1 md:py-2 px-4 md:px-6 items-center rounded md:rounded-lg gap-2'>
+                  <FaGooglePlay />
+                  <span className='lg:flex hidden'>Download</span>
+                </a>
               </div>
             </div>
             <div className='flex flex-col mb-5 w-full'>
