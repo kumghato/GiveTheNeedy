@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className=''>
+    <footer className='relative bottom-0'>
       <div className='bg-[var(--secondaryColor)] px-10 py-10 text-gray-100'>
         <div className='text-center'>
           <h3 className='font-bold sm:text-[1.5rem] m-auto mb-10'>GiveTheNeedy is a platform to connect donors and recievers for impactful giving.</h3>
@@ -47,7 +47,7 @@ const Footer = () => {
                 <Link to={"/forum"}>
                   Forum
                 </Link>
-                <Link to={"/FAQ"}>
+                <Link to={"/faq"}>
                   FAQ
                 </Link>
               </div>

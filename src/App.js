@@ -25,7 +25,7 @@ function App() {
           <Route path='/video-gallery' element={<VideoGallery />} />
           <Route path='/photo-gallery' element={<PhotoGallery />} />
           <Route path='/forum' element={<Forums />} />
-          <Route path='/FAQ' element={<FAQ />} />
+          <Route path='/faq' element={<FAQ />} />
         </Routes>
       </BrowserRouter>
 
