@@ -3,6 +3,8 @@ import background from '../Assets/Images/child-pic.png'
 import Sidebar from './Sidebar'
 import WhyUs from './WhyUs'
 import Footer from './Footer'
+import Testimonials from './Testimonials'
+import VideoCarousel from './VideoCarousel'
 
 const Home = () => {
     return (
@@ -13,7 +15,7 @@ const Home = () => {
                     <Sidebar />
                     <img className='h-[400px] sm:h-screen w-full' src={background} alt="background" />
                 </div>
-                <div className='w-[70%] absolute top-[15%] lg:top-[20%] ms-14 sm:ms-28'>
+                <div className='w-[70%] absolute top-[11%] sm:top-[15%] lg:top-[20%] ms-14 sm:ms-28'>
                     <div className=' bg-white/[.24] rounded-lg shadow-2xl'>
                         <h1
                             className=' text-[1rem] lg:text-[4rem] md:text-[3rem] sm:text-[2.5rem] font-semibold tracking-[0.5rem] sm:tracking-[0.7rem] lg:tracking-[1rem] leading-snug text-shadow p-5 text-gray-800'>
@@ -38,6 +40,8 @@ const Home = () => {
                 </div>
             </div>
             <WhyUs />
+            <VideoCarousel />
+            <Testimonials />
             <Footer />
         </>
     )

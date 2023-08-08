@@ -6,9 +6,11 @@ import Home from './Components/Home';
 import AboutUs from './Components/AboutUs';
 import Gallery from './Components/Gallery';
 import Contact from './Components/Contact';
-import Copy from './Components/Copy';
 import VideoGallery from './Components/VideoGallery';
 import PhotoGallery from './Components/PhotoGallery';
+import Forums from './Components/Forums';
+import FAQ from './Components/FAQ';
+
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/video-gallery' element={<VideoGallery />} />
           <Route path='/photo-gallery' element={<PhotoGallery />} />
+          <Route path='/forum' element={<Forums />} />
+          <Route path='/FAQ' element={<FAQ />} />
         </Routes>
       </BrowserRouter>
 

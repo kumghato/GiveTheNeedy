@@ -9,6 +9,13 @@ import { AiFillInstagram } from 'react-icons/ai'
 import { MdEmail } from 'react-icons/md'
 import playstore from '../Assets/Images/play.png'
 import AppStore from '../Assets/Images/apple1.png'
+import { FaCcVisa, FaCcPaypal, FaCcMastercard, FaGooglePay, FaApple, FaGooglePlay } from 'react-icons/fa'
+import { SiPaytm } from 'react-icons/si'
+import Paypal from '../Assets/Images/paypal.png'
+import Mastercard from '../Assets/Images/mastercard.png'
+import Visa from '../Assets/Images/visa.png'
+import Paytm from '../Assets/Images/paytm.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -17,35 +24,86 @@ const Footer = () => {
         <div className='text-center'>
           <h3 className='font-bold sm:text-[1.5rem] m-auto mb-10'>GiveTheNeedy is a platform to connect donors and recievers for impactful giving.</h3>
         </div>
-        <div className='flex'>
-          <div className='sm:w-[40%] '>
-            <div className='my-5'>
-              <MdLocationPin className='text-sm sm:text-2xl' />
-              <h4 className='font-bold leading-10'>Find us</h4>
-              <p className='text-xs sm:text-base'>H-Apartments, 2nd floor,<p>House.no : 1329,</p>  Jorapukhri, Purana Bazar, <p>Dimapur, Nagaland 797116</p></p>
+        <div className='container'>
+
+          <div id='row-1' className=' flex justify-between sm:px-20'>
+            <div className='gap-2 w-full'>
+              <div className='flex items-center gap-2 '>
+                <h4 className='font-bold text-[0.6rem] sm:text-xl'>Find us</h4>
+                <MdLocationPin className='text-sm sm:text-2xl' />
+              </div>
+              <p className='text-[0.5rem] sm:text-base'>
+                H-Apartments, 2nd floor,
+                <p>House.no : 1329,</p>
+                Jorapukhri, Purana Bazar,
+                <p>Dimapur, Nagaland 797116</p></p>
             </div>
-            <div className='my-5'>
-              <FiPhoneCall className='text-1 sm:text-2xl' />
-              <h4 className='font-bold leading-10'>contact us</h4>
-              <p className='text-xs sm:text-base'>+91 986 269 4100</p>
+            <div className='w-full'>
+              <img src={logo} alt='logo' className='mx-auto w-14 sm:w-32' />
             </div>
-            <div className='my-5'>
-              <MdEmail className='text-sm sm:text-2xl' />
-              <h4 className='font-bold leading-10'>Email us</h4>
-              <p className='text-xs sm:text-base'>support@givetheneedy.org.in</p>
+            <div className='text-center w-full'>
+              <h4 className='font-bold text-center text-[0.6rem] sm:text-xl'>Useful links</h4>
+              <div className='flex flex-col justify-center px-2 gap-1 md:gap-2 mt-2 text-[0.5rem] sm:text-base'>
+                <Link to={"/forum"}>
+                  Forum
+                </Link>
+                <Link to={"/FAQ"}>
+                  FAQ
+                </Link>
+              </div>
             </div>
           </div>
-          <div className='flex flex-col ms-auto lg:me-20 justify-center'>
-            <img src={logo} alt='logo' className='mx-auto w-20 sm:w-40' />
-            <h4 className='font-bold text-center mt-20 text-[0.6rem] md:text-sm'>Download the App!!</h4>
-            <div className='flex items-center h-20'>
-              <img className='object-cover w-20 sm:w-40 cursor-pointer' src={AppStore} alt='logo' />
-              <img className='object-cover w-20 sm:w-40 cursor-pointer' src={playstore} alt='logo' />
+
+
+          {/*====================================================================================*/}
+
+
+          <div id="row-2" className='my-5 flex  justify-between sm:px-20'>
+            <div className='w-full'>
+              <div className='flex items-center gap-2 '>
+                <h4 className='font-bold text-[0.6rem] sm:text-xl '>Contact us</h4>
+                <FiPhoneCall className='text-[0.6rem]sm:text-2xl' />
+              </div>
+              <p className='text-[0.5rem] sm:text-base'>+91 986 269 4100</p>
+            </div>
+
+
+          </div>
+
+          {/*====================================================================================*/}
+          <div id='row-3' className='flex justify-between sm:px-20'>
+
+            <div className='mb-5 gap-2 w-full'>
+              <div className='flex items-center gap-2 '>
+                <h4 className='font-bold text-[0.6rem] sm:text-xl'>Email us</h4>
+                <MdEmail className='text-[sm] sm:text-2xl' />
+              </div>
+              <p className='text-[0.5rem] sm:text-base'>support@givetheneedy.org.in</p>
+            </div>
+
+            <div className='flex flex-col w-full'>
+              <h4 className='font-bold text-center text-[0.6rem] sm:text-xl'>Download the App!!</h4>
+              <div className='flex justify-center px-2 gap-1 md:gap-2 mt-2 text-[0.5rem] sm:text-base'>
+                <a href="" className='bg-black flex py-1 md:py-2 px-2 md:px-4 items-center rounded-lg gap-2'><FaApple />Download</a>
+                <a href="" className='bg-black flex py-1 md:py-2 px-2 md:px-4 items-center rounded-lg gap-2'><FaGooglePlay />Download</a>
+              </div>
+            </div>
+            <div className='flex flex-col mb-5 w-full'>
+              <h4 className='font-bold text-center text-[0.6rem] sm:text-xl'>Support us</h4>
+              <div className='flex justify-center px-2 gap-1 md:gap-2 mt-2 text-[0.5rem] sm:text-base'>
+                <FaCcMastercard className='text-sm md:text-4xl' />
+                <FaCcPaypal className='text-sm md:text-4xl' />
+                <FaCcVisa className='text-sm md:text-4xl' />
+                <FaGooglePay className='text-sm md:text-4xl' />
+                <SiPaytm className='text-sm md:text-4xl' />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+
+      {/*===========================================================*/}
       <div className='text-center p-5'>
         <div className='m-auto'>
           <h4 className=' leading-10'>Follow Us</h4>

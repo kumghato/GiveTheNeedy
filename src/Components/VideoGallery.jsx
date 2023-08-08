@@ -49,7 +49,6 @@ const VideoGallery = () => {
                                     url={item.video}
                                     width="100%"
                                     height={300}
-
                                 />
                                 <h3 className='mt-4 font-semibold text-xl' >{item.title}</h3>
                             </div>
