@@ -37,7 +37,7 @@ const FAQ = () => {
                 {faqData.map((item, i) => {
                     return (
                         <>
-                            <div onClick={() => toggle(i)} className={`shadow-xl rounded-tl-lg rounded-tr-lg mt-5 md:w-1/2 py-2 m-auto cursor-pointer ${isOpen === i ? "" : "rounded-lg"}`} >
+                            <div onClick={() => toggle(i)} className={`border shadow-xl border-top  rounded-tl-lg rounded-tr-lg mt-5 md:w-1/2 py-2 m-auto cursor-pointer ${isOpen === i ? "border-b-0" : "rounded-lg"}`} >
                                 <div className='flex'>
                                     <div className='flex font-bold justify-between px-2 md:px-5 py-2 items-center'>
                                         <h5>{item.question}</h5>
@@ -48,7 +48,7 @@ const FAQ = () => {
                                 </div>
 
                             </div>
-                            <div className={`shadow-xl  rounded-bl-lg rounded-br-lg bg-white md:w-1/2 m-auto px-2 transition-all duration-500 ease-in ${isOpen === i ? 'translate-y-0 ' : 'translate-y-[-1rem]'}`}>
+                            <div className={`shadow-xl rounded-bl-lg rounded-br-lg md:w-1/2 m-auto px-2 md:px-5 transition-all duration-500 ease-in bg-white ${isOpen === i ? 'translate-y-0 border border-t-0 border-b-0' : 'translate-y-[-1rem]'}`}>
                                 <p className={`pb-5 ${isOpen === i ? 'block' : 'hidden'} `}>
                                     {item.answer}
                                 </p>

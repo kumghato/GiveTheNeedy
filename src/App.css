@@ -11,8 +11,14 @@
     text-shadow: 10px 2px 20px rgba(0, 0, 0, .54);
 }
 
-
-
 .active {
     text-decoration: overline;
+}
+
+.border_accordion {
+    border-bottom: 0;
+}
+
+.border_accordion_2 {
+    border-top: 0;
 }
