@@ -44,7 +44,7 @@ const Testimonials = () => {
     return (
         <div className=' p-10 text-center mb-10'>
             <h3 className='text-[var(--primaryColor)] sm:text-[2rem] font-semibold tracking-widest sm:leading-[3rem]'>What people are saying about <span className='testo_title'>GiveTheNeedy</span></h3>
-            <div className='w-full m-auto rounded-lg  mt-10 p-8 md:p-20 leading-10 bg-[var(--primaryColor)]'>
+            <div className='w-full m-auto rounded-lg  mt-10 p-8 md:p-20 leading-2 md:leading-10 bg-[var(--primaryColor)]'>
                 <Slider {...settings}>
                     {testimonialsData.map((testimonial, index) => (
                         <div key={index} className={`text-white mb-8`}>

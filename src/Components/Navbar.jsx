@@ -42,13 +42,15 @@ const Navbar = () => {
 
             {/*Nav for mobile  */}
             <div className={`z-20 flex justify-end fixed top-0 w-full h-screen transition-all duration-500 ease-in ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
-                <div className='flex z-30 px-3 py-2'>
+                <div className='flex z-30 px-3 py-3'>
                     <button onClick={toggle} className='fixed right-5'>
                         <BiX className='text-4xl text-white ' />
                     </button>
                 </div>
-                <div className='p-10 text-center gap-7 font-semibold text-white flex flex-col w-1/2 bg-[var(--primaryColor)] '>
-                    <Navlinks />
+                <div className='p-10 text-center font-semibold text-white  w-1/2 bg-[var(--primaryColor)] '>
+                    <div className='mt-5 flex flex-col gap-5 '>
+                        <Navlinks />
+                    </div>
                 </div>
             </div>
 

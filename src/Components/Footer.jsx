@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from '../Assets/Images/logo.png'
 import { MdLocationPin } from 'react-icons/md'
-import { FiPhoneCall } from 'react-icons/fi'
+import { BiSolidPhoneCall } from 'react-icons/bi'
 import { FaYoutube } from 'react-icons/fa';
 import { AiFillFacebook } from 'react-icons/ai'
 import { AiFillLinkedin } from 'react-icons/ai'
 import { AiFillInstagram } from 'react-icons/ai'
-import { MdEmail } from 'react-icons/md'
+import { HiMail } from 'react-icons/hi'
 import playstore from '../Assets/Images/play.png'
 import AppStore from '../Assets/Images/apple1.png'
 import { FaCcVisa, FaCcPaypal, FaCcMastercard, FaGooglePay, FaApple, FaGooglePlay } from 'react-icons/fa'
@@ -28,9 +28,9 @@ const Footer = () => {
 
           <div id='row-1' className=' flex justify-between '>
             <div className='gap-2 w-full'>
-              <div className='flex items-center gap-2 '>
+              <div className='flex items-center gap-2 py-2'>
                 <h4 className='font-bold text-[0.6rem] sm:text-xl'>Find us</h4>
-                <MdLocationPin className='text-sm sm:text-2xl' />
+                <MdLocationPin className='text-[0.6rem] sm:text-xl' />
               </div>
               <p className='text-[0.5rem] sm:text-base'>
                 H-Apartments, 2nd floor,
@@ -50,6 +50,12 @@ const Footer = () => {
                 <Link to={"/faq"}>
                   FAQ
                 </Link>
+                <Link to={"/faq"}>
+                  Terms & Conditions
+                </Link>
+                <Link to={"/faq"}>
+                  Privacy policy
+                </Link>
               </div>
             </div>
           </div>
@@ -60,9 +66,9 @@ const Footer = () => {
 
           <div id="row-2" className='my-5 flex  justify-between '>
             <div className='w-full'>
-              <div className='flex items-center gap-2 '>
+              <div className='flex items-center gap-2 py-2 '>
                 <h4 className='font-bold text-[0.6rem] sm:text-xl '>Contact us</h4>
-                <FiPhoneCall className='text-[0.6rem]sm:text-2xl' />
+                <BiSolidPhoneCall className='text-[0.6rem] sm:text-xl' />
               </div>
               <p className='text-[0.5rem] sm:text-base'>+91 986 269 4100</p>
             </div>
@@ -74,9 +80,9 @@ const Footer = () => {
           <div id='row-3' className='flex justify-between'>
 
             <div className='mb-5 gap-2 w-full'>
-              <div className='flex items-center gap-2 '>
+              <div className='flex items-center gap-2 py-2'>
                 <h4 className='font-bold text-[0.6rem] sm:text-xl'>Email us</h4>
-                <MdEmail className='text-[sm] sm:text-2xl' />
+                <HiMail className='text-[0.6rem] sm:text-xl' />
               </div>
               <p className='text-[0.5rem] sm:text-base'>support@givetheneedy.org.in</p>
             </div>
