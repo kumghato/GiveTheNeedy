@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import logo from '../Assets/Images/logo.png'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { BiMenu, BiX } from 'react-icons/bi'
 
 
@@ -18,6 +18,7 @@ const Navbar = () => {
                 <NavLink to={"/about_us"}><a className='hover:overline' onClick={() => isSetOpen(false)}>ABOUT US</a></NavLink>
                 <NavLink to={"/gallery"}><a className='hover:overline' onClick={() => isSetOpen(false)}>GALLERY</a></NavLink>
                 <NavLink to={"/contact"}><a className='hover:overline' onClick={() => isSetOpen(false)}>CONTACT</a></NavLink>
+                <NavLink to={"/forum"}><a className='hover:overline' onClick={() => isSetOpen(false)}>FORUM</a></NavLink>
 
             </>
         )
@@ -26,7 +27,9 @@ const Navbar = () => {
         <>
             <nav className='flex py-1 fixed top-0 bg-white w-full z-20 items-center justify-between px-10 md:px-20'>
                 <div>
-                    <img src={logo} alt="logo" className='w-14' />
+                    <Link to={"/"}>
+                        <img src={logo} alt="logo" className='w-14' />
+                    </Link>
                 </div>
                 <div className='md:flex hidden gap-10 font-semibold'>
                     <Navlinks />

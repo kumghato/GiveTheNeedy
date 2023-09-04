@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { FaPhoneAlt, FaWhatsapp, FaRegEnvelope } from 'react-icons/fa'
+import emailjs from 'emailjs-com'
 import Footer from './Footer';
+import { Toaster, toast } from 'react-hot-toast';
 
 
 const Contact = () => {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm('service_2xw6p9c', 'template_mnl6f31', form.current, 'MlRLGkOZ9NzU8XlJ4')
+        e.target.reset()
+        toast.success("Your Message has been sent.")
+    }
+
     return (
         <>
             <div className='mt-20'>
@@ -16,7 +27,7 @@ const Contact = () => {
                         <h5 className='text-[0.7rem] md:text-base text-center mt-10 font-bold m-auto'>
                             Write to us!!!
                         </h5 >
-                        <form className='flex flex-col p-10 gap-2'>
+                        <form className='flex flex-col p-10 gap-2' ref={form} onSubmit={(e) => sendEmail(e)}>
                             <input className='border p-3 rounded' type='text' name='fullname' placeholder='Fullname' required />
                             <input className='border p-3 rounded' type='email' name='email' placeholder='Email Address' required />
                             <input className='border p-3 rounded' type='number' name='phone' placeholder='Phone' required />
@@ -56,6 +67,7 @@ const Contact = () => {
                     </div>
 
                 </div>
+                <Toaster />
             </div>
             <Footer />
 
