@@ -145,7 +145,7 @@ const Forums = () => {
                                             <h5 className='font-bold cursor-pointer hover:text-gray-500'>{item.title}</h5>
                                         </Link>
                                         <div className='sm:flex justify-between mt-5' >
-                                            <p className='text-gray-500'>Created by: {item.createdBy}</p>
+                                            <p className='text-gray-500'>Created by: {item.owner}</p>
                                             <p className='text-gray-500'>Created on: {new Date(item.createdAt).toLocaleString()}</p>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@ const Forums = () => {
                         })}
                     </div>
                     <div className='p-10 hidden sm:flex w-full sm:w-[30%] bg-gray-100'>
-                        google ads
+
                     </div>
                 </div>
             </div>
@@ -239,7 +239,7 @@ const Forums = () => {
                                     </div>
 
                                     <div className='text-center items-center p-10'>
-                                        <p>Don't have an account? <a href="/register" className='text-[var(--primaryColor)]'>Register</a></p>
+                                        <p>Don't have an account? <Link to={"/register"} className='text-[var(--primaryColor)]'>Register</Link></p>
 
                                     </div>
                                 </form>

@@ -21,6 +21,7 @@ const MyPost = () => {
                 Authorization: localStorage.getItem('token')
             }
         })
+        console.log(res)
         if (res.data.status === 1) {
             setData(res.data.response);
         }
@@ -88,7 +89,7 @@ const MyPost = () => {
                                             <h5 className='font-bold cursor-pointer hover:text-gray-500'>{item.title}</h5>
                                         </Link>
                                         <div className='sm:flex justify-between mt-5' >
-                                            <p className='text-gray-500'>Created by: {item.createdBy}</p>
+                                            <p className='text-gray-500'>Created by: You</p>
                                             <p className='text-gray-500'>Created on: {new Date(item.createdAt).toLocaleString()}</p>
                                         </div>
                                     </div>
@@ -97,7 +98,7 @@ const MyPost = () => {
                         })}
                     </div>
                     <div className='p-10 hidden sm:flex w-full sm:w-[30%] bg-gray-100'>
-                        google ads
+
                     </div>
                 </div>
             </div>

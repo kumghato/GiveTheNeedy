@@ -104,7 +104,7 @@ const ForumThread = () => {
                                             <h5 className='font-bold text-2xl mb-2'>{data.title}</h5>
                                             <p>{data.post}</p>
                                             <div className='sm:flex justify-between mt-5' >
-                                                <p className='text-gray-500'>Created by: {data.createdBy}</p>
+                                                <p className='text-gray-500'>Created by: {data.owner}</p>
                                                 <p className='text-gray-500'>Created on: {new Date(data.createdAt).toLocaleString()}</p>
                                             </div>
                                         </div>
@@ -146,7 +146,7 @@ const ForumThread = () => {
                                 })}
                             </div>
                             <div className='fixed right-0 p-10 hidden h-screen sm:flex w-full sm:w-[22%] bg-gray-100'>
-                                google ads
+
                             </div>
                         </div>
                     </div>
