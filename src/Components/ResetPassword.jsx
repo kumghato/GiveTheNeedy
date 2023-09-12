@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { toast } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const ResetPassword = () => {
+    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLinkLocal = "http://localhost:8000/"
+
     const navigate = useNavigate()
     const [password, setPassword] = useState({
         email: localStorage.getItem("mail"),
@@ -22,7 +25,7 @@ const ResetPassword = () => {
             if (password.newPassword !== password.confirmPassword) {
                 alert("Password does not match")
             } else {
-                await axios.put(`http://localhost:8000/reset/password/${id}/${token}`, { password });
+                await axios.put(`${serverLink}reset/password/${id}/${token}`, { password });
                 toast.success('Password Successfully updated')
                 navigate('/forum');
             }
@@ -39,6 +42,7 @@ const ResetPassword = () => {
                 <input className='border border-black rounded px-2 py-2 mb-5' type='password' placeholder='Confirm Password' name='ConfirmPassword' onChange={(e) => handleChange(e)} required />
                 <button onClick={handleSubmit} className='px-4 py-2 text-white font-bold bg-[var(--primaryColor)] rounded-lg'>Update Password</button>
             </from>
+            <Toaster />
         </div>
     )
 }

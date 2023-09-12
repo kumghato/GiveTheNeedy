@@ -8,9 +8,17 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 import toast, { Toaster } from 'react-hot-toast'
 import CookiesJS from 'js-cookie'
 import MyPost from './MyPost'
+import { FaYoutube } from 'react-icons/fa';
+import { AiFillFacebook, AiFillTwitterSquare } from 'react-icons/ai'
+import { AiFillLinkedin } from 'react-icons/ai'
+import { AiFillInstagram } from 'react-icons/ai'
 import NavBarSide from './NavBarSide'
+import Footer from './Footer'
 
 const Forums = () => {
+    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLinkLocal = "http://localhost:8000/"
+
     const [threadData, setThreadData] = useState({
         title: "",
         post: ""
@@ -33,14 +41,14 @@ const Forums = () => {
 
     {/*===========================================FETCHING DATA=================================================== */ }
     const fetchThreadsData = async () => {
-        const res = await axios.get('http://localhost:8000/get/all/thread')
+        const res = await axios.get(`${serverLink}get/all/thread`)
         if (res.data.status === 1) {
             console.log(res)
             setData(res.data.response)
         }
     }
     const fetchUserById = async () => {
-        const res = await axios.get(`http://localhost:8000/get/user`, {
+        const res = await axios.get(`${serverLink}get/user`, {
             headers: {
                 Authorization: localStorage.getItem('token')
             }
@@ -55,7 +63,7 @@ const Forums = () => {
     {/*===========================================SUBMIT THREADS DATA=================================================== */ }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await axios.post('http://localhost:8000/create/thread', threadData, {
+        const res = await axios.post(`${serverLink}create/thread`, threadData, {
             headers: {
                 Authorization: isAuthenticate,
             },
@@ -86,7 +94,7 @@ const Forums = () => {
     {/*===========================================USER LOGIN=================================================== */ }
     const UserLogin = async (e) => {
         e.preventDefault()
-        const res = await axios.post('http://localhost:8000/user/login', user)
+        const res = await axios.post(`${serverLink}user/login`, user)
         console.log(res)
         if (res.data.status === 1) {
             localStorage.setItem("token", res.data.token)
@@ -120,6 +128,9 @@ const Forums = () => {
         fetchThreadsData()
         fetchUserById()
     }, [])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className='mt-16 md:flex'>
@@ -128,12 +139,12 @@ const Forums = () => {
             {/* ============================================================================================================= */}
 
 
-            <div className='sm:absolute sm:right-0 w-full sm:w-[75%]'>
-                <div className='text-center bg-gray-100 p-5'>
-                    <button className='text-white w-[90%] bg-[var(--primaryColor)] rounded-lg py-2 px-3 ' type='submit' onClick={() => toggle()}>Ask Question</button>
+            <div className='sm:absolute sm:left-[15%] sm:w-[80%] py-5 pt-10'>
+                <div className='text-center w-full bg-gray-100 p-5'>
+                    <button className='text-white w-full sm:w-[30%] bg-[var(--primaryColor)] rounded-lg py-2 px-3 ' type='submit' onClick={() => toggle()}>Ask Question</button>
                 </div>
                 <div className='sm:flex gap-2 w-full mt-2'>
-                    <div className='p-10 sm:w-[70%] bg-gray-100'>
+                    <div className='p-10 sm:w-full bg-gray-100'>
                         {data.map((item) => {
                             return (
                                 <div className='flex px-5 py-3 box-shadow rounded my-2 w-full '>
@@ -153,10 +164,21 @@ const Forums = () => {
                             )
                         })}
                     </div>
-                    <div className='p-10 hidden sm:flex w-full sm:w-[30%] bg-gray-100'>
 
+                    <div className='absolute w-full bg-white top-[140%] text-center p-5'>
+                        <div className='m-auto'>
+                            <h4 className=' leading-10'>Follow Us</h4>
+                            <div className='flex justify-center text-2xl gap-3'>
+                                <a href="https://www.facebook.com/profile.php?id=100083310940497&mibextid=ZbWKwL" target='_blank'><AiFillFacebook /></a>
+                                <a href="https://instagram.com/zeliang_codetech?utm_source=qr&igshid=OGU0MmVlOWVjOQ==" target='_blank'><AiFillInstagram /></a>
+                                <a href="https://twitter.com/kangzang_shane?t=dAYOswP3I7AhyuGF3B8jPg&s=09" target='_blank'><AiFillTwitterSquare /></a>
+                                <a href="https://youtube.com/@zeliangcodetech?si=pfor7ouP07rXVwn6" target='_blank'><FaYoutube /></a>
+                            </div>
+                        </div>
+                        <p className=' leading-10'> {new Date().getFullYear()} &copy; Zeliang Codetech Pvt. Ltd | All rights reserved</p>
                     </div>
                 </div>
+
             </div>
 
             {/* ========================================================Modal===================================================== */}
@@ -235,7 +257,7 @@ const Forums = () => {
                                         >
                                             Login
                                         </button>
-                                        <a href="/forgot-password" className='ms-auto text-[var(--primaryColor)]'>Forgot Password?</a>
+                                        <Link to={"/forgot-password"} className='ms-auto text-[var(--primaryColor)]'>Forgot Password?</Link>
                                     </div>
 
                                     <div className='text-center items-center p-10'>
@@ -250,6 +272,7 @@ const Forums = () => {
                 </>
             )
             }
+
             <Toaster />
         </div>
     )

@@ -19,6 +19,7 @@ import ForgotPassword from './Components/ForgotPassword';
 import MyPost from './Components/MyPost';
 import Profile from './Components/Profile';
 import EditProfile from './Components/EditProfile';
+import RefundPolicy from './Components/RefundPolicy';
 
 
 function App() {
@@ -37,12 +38,13 @@ function App() {
           <Route path='/forum/thread/:id' element={<ForumThread />} />
           <Route path='/faq' element={<FAQ />} />
           <Route path='/privacy_policy' element={<Privacypolicy />} />
-          <Route path='/terms&conditions' element={<TermsCondition />} />
+          <Route path='/terms_of_use' element={<TermsCondition />} />
           <Route path='/register' element={<SignUp />} />
-          <Route path="//forgot-password" element={<ForgotPassword />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset/password/:id/:token" element={<ResetPassword />} />
           <Route path="/my/profile" element={<Profile />} />
           <Route path="/edit_profile/:id" element={<EditProfile />} />
+          <Route path="/refund_policy" element={<RefundPolicy />} />
         </Routes>
       </BrowserRouter>
 

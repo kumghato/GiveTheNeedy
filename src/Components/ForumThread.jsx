@@ -7,8 +7,15 @@ import axios from 'axios'
 import { Toaster, toast } from 'react-hot-toast'
 import LoginModal from './LoginModal'
 import NavBarSide from './NavBarSide'
+import { FaYoutube } from 'react-icons/fa';
+import { AiFillFacebook, AiFillTwitterSquare } from 'react-icons/ai'
+import { AiFillLinkedin } from 'react-icons/ai'
+import { AiFillInstagram } from 'react-icons/ai'
 
 const ForumThread = () => {
+    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLinkLocal = "http://localhost:8000/"
+
     const isAuthenticate = localStorage.getItem("token")
     let params = useParams()
 
@@ -31,7 +38,7 @@ const ForumThread = () => {
 
     const UserLogin = async (e) => {
         e.preventDefault()
-        const res = await axios.post('http://localhost:8000/user/login', user)
+        const res = await axios.post(`${serverLink}user/login`, user)
         console.log(res)
         if (res.data.status === 1) {
             setPopUp(!popUp)
@@ -43,13 +50,13 @@ const ForumThread = () => {
     }
 
     const fetchSingleData = async () => {
-        const res = await axios.get(`http://localhost:8000/get/thread/${params.id}`)
+        const res = await axios.get(`${serverLink}get/thread/${params.id}`)
         console.log(res)
         setData(res.data.response)
     }
 
     const fetchCommentData = async () => {
-        const res = await axios.get(`http://localhost:8000/get/thread/${params.id}`)
+        const res = await axios.get(`${serverLink}get/thread/${params.id}`)
         setCommentData(res.data.response.comments)
     }
 
@@ -64,7 +71,7 @@ const ForumThread = () => {
         //     formdata.append(key, value)
         // })
         if (isAuthenticate) {
-            const res = await axios.post(`http://localhost:8000/create/comment/${params.id}`, comment, {
+            const res = await axios.post(`${serverLink}create/comment/${params.id}`, comment, {
                 headers: {
                     Authorization: localStorage.getItem('token')
                 }
@@ -92,9 +99,9 @@ const ForumThread = () => {
             <div className='mt-16 md:flex'>
                 <NavBarSide />
                 <div>
-                    <div className='sm:absolute sm:right-0 w-full sm:w-[75%] py-5 pt-10'>
+                    <div className='sm:absolute sm:left-[15%] sm:w-[80%] py-5 pt-10'>
                         <div className='sm:flex gap-2 w-full mt-2'>
-                            <div className='p-10 sm:w-[70%] bg-gray-100'>
+                            <div className='p-10 sm:w-full bg-gray-100'>
                                 <div className='sticky top-16 px-5 py-3 box-shadow rounded my-2 w-full  bg-gray-100 '>
                                     <div className='flex'>
                                         <div className='flex items-center'>
@@ -145,10 +152,21 @@ const ForumThread = () => {
                                     )
                                 })}
                             </div>
-                            <div className='fixed right-0 p-10 hidden h-screen sm:flex w-full sm:w-[22%] bg-gray-100'>
 
+                            <div className='absolute w-full bg-white top-[140%]  text-center p-5'>
+                                <div className='m-auto'>
+                                    <h4 className=' leading-10'>Follow Us</h4>
+                                    <div className='flex justify-center text-2xl gap-3'>
+                                        <a href="https://www.facebook.com/profile.php?id=100083310940497&mibextid=ZbWKwL" target='_blank'><AiFillFacebook /></a>
+                                        <a href="https://instagram.com/zeliang_codetech?utm_source=qr&igshid=OGU0MmVlOWVjOQ==" target='_blank'><AiFillInstagram /></a>
+                                        <a href="https://twitter.com/kangzang_shane?t=dAYOswP3I7AhyuGF3B8jPg&s=09" target='_blank'><AiFillTwitterSquare /></a>
+                                        <a href="https://youtube.com/@zeliangcodetech?si=pfor7ouP07rXVwn6" target='_blank'><FaYoutube /></a>
+                                    </div>
+                                </div>
+                                <p className=' leading-10'> {new Date().getFullYear()} &copy; Zeliang Codetech Pvt. Ltd | All rights reserved</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 {popUp && (
@@ -156,6 +174,7 @@ const ForumThread = () => {
                 )}
             </div>
             <Toaster />
+
         </>
     )
 }

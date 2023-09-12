@@ -3,18 +3,11 @@ import logo from '../Assets/Images/logo.png'
 import { MdLocationPin } from 'react-icons/md'
 import { BiSolidPhoneCall } from 'react-icons/bi'
 import { FaYoutube } from 'react-icons/fa';
-import { AiFillFacebook } from 'react-icons/ai'
-import { AiFillLinkedin } from 'react-icons/ai'
+import { AiFillFacebook, AiFillTwitterSquare } from 'react-icons/ai'
 import { AiFillInstagram } from 'react-icons/ai'
 import { HiMail } from 'react-icons/hi'
-import playstore from '../Assets/Images/play.png'
-import AppStore from '../Assets/Images/apple1.png'
 import { FaCcVisa, FaCcPaypal, FaCcMastercard, FaGooglePay, FaApple, FaGooglePlay } from 'react-icons/fa'
 import { SiPaytm } from 'react-icons/si'
-import Paypal from '../Assets/Images/paypal.png'
-import Mastercard from '../Assets/Images/mastercard.png'
-import Visa from '../Assets/Images/visa.png'
-import Paytm from '../Assets/Images/paytm.png'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -46,22 +39,27 @@ const Footer = () => {
                   <p>Dimapur, Nagaland 797116</p></p>
               </div>
               <div className='w-full'>
-                <img src={logo} alt='logo' className='mx-auto w-14 sm:w-32' />
+                <img src={logo} alt='logo' className='mx-auto w-14 sm:w-[50%]' />
               </div>
-              <div className='text-center w-full'>
-                <h4 className='font-bold text-center text-[0.6rem] sm:text-xl'>Useful links</h4>
-                <div className='flex flex-col justify-center px-2 gap-1 md:gap-2 mt-2 text-[0.5rem] sm:text-base'>
+              <div className='text-center w-full '>
+                <div className='flex items-center gap-2 py-2 justify-center'>
+                  <h4 className='font-bold  text-[0.6rem] sm:text-xl'>Useful links</h4>
+                </div>
+                <div className='flex flex-col justify-center px-2  gap-1 md:gap-2 mt-2 text-[0.5rem] sm:text-base'>
                   <Link to={"/forum"}>
                     Forum
                   </Link>
                   <Link to={"/faq"}>
                     FAQ
                   </Link>
-                  <Link to={"/terms&conditions"}>
-                    Terms & Conditions
+                  <Link to={"/terms_of_use"}>
+                    Terms of use
                   </Link>
                   <Link to={"/privacy_policy"}>
                     Privacy policy
+                  </Link>
+                  <Link to={"/refund_policy"}>
+                    Refund policy
                   </Link>
                 </div>
               </div>
@@ -71,29 +69,14 @@ const Footer = () => {
             {/*====================================================================================*/}
 
 
-            <div id="row-2" className='my-5 flex  justify-between '>
+            <div id="row-2" className='my-5 flex '>
               <div className='w-full'>
-                <div className='flex items-center gap-2 py-2 '>
+                <div className='flex items-center gap-2'>
                   <h4 className='font-bold text-[0.6rem] sm:text-xl '>Contact us</h4>
                   <BiSolidPhoneCall className='text-[0.6rem] sm:text-xl' />
                 </div>
                 <p className='text-[0.5rem] sm:text-base'>+91 986 269 4100</p>
               </div>
-
-
-            </div>
-
-            {/*====================================================================================*/}
-            <div id='row-3' className='flex justify-between'>
-
-              <div className='mb-5 gap-2 w-full'>
-                <div className='flex items-center gap-2 py-2'>
-                  <h4 className='font-bold text-[0.6rem] sm:text-xl'>Email us</h4>
-                  <HiMail className='text-[0.6rem] sm:text-xl' />
-                </div>
-                <p className='text-[0.5rem] sm:text-base'>support@givetheneedy.org.in</p>
-              </div>
-
               <div className='flex flex-col w-full'>
                 <h4 className='font-bold text-center text-[0.6rem] sm:text-xl'>Download the App!!</h4>
                 <div className='flex justify-center px-2 gap-1 md:gap-2 mt-2 text-[0.5rem] sm:text-base' >
@@ -118,6 +101,21 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
+            {/*====================================================================================*/}
+            <div id='row-3' className='flex justify-between'>
+
+              <div className='mb-5 gap-2 w-full'>
+                <div className='flex items-center gap-2 py-2'>
+                  <h4 className='font-bold text-[0.6rem] sm:text-xl'>Email us</h4>
+                  <HiMail className='text-[0.6rem] sm:text-xl' />
+                </div>
+                <p className='text-[0.5rem] sm:text-base'>support@givetheneedy.org.in</p>
+              </div>
+
+
+
+            </div>
           </div>
         </div>
 
@@ -127,10 +125,10 @@ const Footer = () => {
           <div className='m-auto'>
             <h4 className=' leading-10'>Follow Us</h4>
             <div className='flex justify-center text-2xl gap-3'>
-              <a href=""><AiFillFacebook /></a>
-              <a href=""><AiFillInstagram /></a>
-              <a href=""><AiFillLinkedin /></a>
-              <a href=""><FaYoutube /></a>
+              <a href="https://www.facebook.com/profile.php?id=100083310940497&mibextid=ZbWKwL" target='_blank'><AiFillFacebook /></a>
+              <a href="https://instagram.com/zeliang_codetech?utm_source=qr&igshid=OGU0MmVlOWVjOQ==" target='_blank'><AiFillInstagram /></a>
+              <a href="https://twitter.com/kangzang_shane?t=dAYOswP3I7AhyuGF3B8jPg&s=09" target='_blank'><AiFillTwitterSquare /></a>
+              <a href="https://youtube.com/@zeliangcodetech?si=pfor7ouP07rXVwn6" target='_blank'><FaYoutube /></a>
             </div>
           </div>
           <p className=' leading-10'> {new Date().getFullYear()} &copy; Zeliang Codetech Pvt. Ltd | All rights reserved</p>
@@ -144,7 +142,7 @@ const Footer = () => {
             <div className='bg-white sm:w-1/2 h-[20rem] rounded-lg flex flex-col p-5 '>
               <button onClick={() => setPopUp(false)} className='ms-auto px-3 font-bold rounded-lg '>X</button>
               <img src={logo} alt="logo" className='m-auto' />
-              <h1 className='text-4xl text-center m-auto'>Mobile Apps coming soon</h1>
+              <h1 className='text-4xl text-center m-auto'>Mobile App coming soon</h1>
             </div>
           </div>
         )

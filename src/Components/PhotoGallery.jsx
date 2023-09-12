@@ -2,22 +2,7 @@ import React, { useState } from 'react'
 import Footer from './Footer'
 import { media } from '../Assets/Images'
 import Modal from './ImageModal'
-import pic_1 from '../Assets/Images/pic_1.jpg'
-import pic_2 from '../Assets/Images/pic_2.jpg'
-import pic_3 from '../Assets/Images/pic_3.jpg'
-import pic_4 from '../Assets/Images/pic_4.jpg'
-import pic_5 from '../Assets/Images/pic_5.jpg'
-import pic_6 from '../Assets/Images/pic_6.jpg'
-import pic_7 from '../Assets/Images/pic_7.jpg'
-import pic_8 from '../Assets/Images/pic_8.jpg'
-import pic_9 from '../Assets/Images/pic_9.jpg'
-import pic_10 from '../Assets/Images/pic_10.jpg'
-import pic_11 from '../Assets/Images/pic_11.jpg'
-import pic_12 from '../Assets/Images/pic_12.jpg'
-import pic_13 from '../Assets/Images/pic_13.jpg'
-import pic_14 from '../Assets/Images/pic_14.jpg'
-import pic_15 from '../Assets/Images/pic_15.jpg'
-import pic_16 from '../Assets/Images/pic_16.jpg'
+
 
 const PhotoGallery = () => {
     const [clickedImg, setClickedImg] = useState(null)
@@ -27,6 +12,38 @@ const PhotoGallery = () => {
         setCurrentIndex(index)
         setClickedImg(item.url)
     }
+    const handelRotationRight = () => {
+        const totalLength = media.length;
+        if (currentIndex + 1 >= totalLength) {
+            setCurrentIndex(0);
+            const newUrl = media[0].url;
+            setClickedImg(newUrl);
+            return;
+        }
+        const newIndex = currentIndex + 1;
+        const newUrl = media.filter((item) => {
+            return media.indexOf(item) === newIndex;
+        });
+        const newItem = newUrl[0].url;
+        setClickedImg(newItem);
+        setCurrentIndex(newIndex);
+    };
+    const handelRotationLeft = () => {
+        const totalLength = media.length;
+        if (currentIndex === 0) {
+            setCurrentIndex(totalLength - 1);
+            const newUrl = media[totalLength - 1].url;
+            setClickedImg(newUrl);
+            return;
+        }
+        const newIndex = currentIndex - 1;
+        const newUrl = media.filter((item) => {
+            return media.indexOf(item) === newIndex;
+        });
+        const newItem = newUrl[0].url;
+        setClickedImg(newItem);
+        setCurrentIndex(newIndex);
+    };
 
     return (
         <>
@@ -53,6 +70,8 @@ const PhotoGallery = () => {
                     <Modal
                         clickedImg={clickedImg}
                         setClickedImg={setClickedImg}
+                        handelRotationRight={handelRotationRight}
+                        handelRotationLeft={handelRotationLeft}
                     />
                 )
                 }

@@ -7,6 +7,9 @@ import { VscAccount } from 'react-icons/vsc'
 import { Link, useParams } from 'react-router-dom';
 
 const MyPost = () => {
+    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLinkLocal = "http://localhost:8000/"
+
     const [data, setData] = useState([])
     const [userData, setUserData] = useState([])
     const [singleUser, setSingleUser] = useState({})
@@ -16,7 +19,7 @@ const MyPost = () => {
     const params = useParams()
 
     const fetchData = async () => {
-        const res = await axios.get("http://localhost:8000/get/all/thread/owner", {
+        const res = await axios.get(`${serverLink}get/all/thread/owner`, {
             headers: {
                 Authorization: localStorage.getItem('token')
             }
@@ -27,7 +30,7 @@ const MyPost = () => {
         }
     };
     const fetchUSer = async () => {
-        const res = await axios.get(`http://localhost:8000/get/single/user`, {
+        const res = await axios.get(`${serverLink}get/single/user`, {
             headers: {
                 Authorization: localStorage.getItem('token')
             }
@@ -45,13 +48,13 @@ const MyPost = () => {
     return (
         <div className='mt-16 md:flex'>
             <NavBarSide />
-            <div className='sm:absolute sm:right-0 w-full sm:w-[75%]'>
-                <div className=' bg-gray-100 p-5 w-full'>
-                    <div className='flex m-auto w-[80%]'>
-                        <div className='p-10 bg-white rounded-[50%] w-40 h-40'>
+            <div className='sm:absolute  sm:left-[15%] w-full sm:w-[80%] '>
+                <div className=' bg-gray-100 p-5 w-full '>
+                    <div className=' sm:m-auto w-[30%] sm:w-[80%] items-center sm:flex '>
+                        <div className='p-10 flex items-center bg-white rounded-[50%] sm:w-40 h-[7rem] sm:h-40'>
                             <img src={logo} alt="Profile" className='w-20' />
                         </div>
-                        <div className='p-5 ms-10'>
+                        <div className='p-5 sm:ms-10'>
                             {isAuthenticate ? (<>
                                 {userData.map((item) => {
                                     return (
@@ -76,8 +79,8 @@ const MyPost = () => {
                 </div>
 
                 <div className='sm:flex gap-2 w-full mt-2'>
-                    <div className='p-10 sm:w-[70%] bg-gray-100'>
-                        <h1 className=' w-[90%] text-center mb-10 text-4xl font-bold text-[var(--primaryColor)] rounded-lg py-2 px-3 ' >My Posts</h1>
+                    <div className='p-10 sm:w-full bg-gray-100'>
+                        <h1 className=' w-full text-center mb-10 text-4xl font-bold text-[var(--primaryColor)] rounded-lg py-2 px-3 ' >My Posts</h1>
                         {data.map((item) => {
                             return (
                                 <div className='flex px-5 py-3 box-shadow rounded my-2 w-full '>
@@ -97,9 +100,7 @@ const MyPost = () => {
                             )
                         })}
                     </div>
-                    <div className='p-10 hidden sm:flex w-full sm:w-[30%] bg-gray-100'>
 
-                    </div>
                 </div>
             </div>
 

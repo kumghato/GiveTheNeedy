@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { toast } from 'react-hot-toast'
+import { Toaster, toast } from 'react-hot-toast'
 import Cookies from 'js-cookie'
 
 const LoginModal = ({ closeModal }, { openModal }) => {
+    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLinkLocal = "http://localhost:8000/"
 
     const [user, setUser] = useState({
         email: "",
@@ -17,7 +19,7 @@ const LoginModal = ({ closeModal }, { openModal }) => {
 
     const UserLogin = async (e) => {
         e.preventDefault()
-        const res = await axios.post('http://localhost:8000/user/login', user)
+        const res = await axios.post(`${serverLink}user/login`, user)
 
         if (res.data.status === 1) {
             closeModal(false)
@@ -73,6 +75,8 @@ const LoginModal = ({ closeModal }, { openModal }) => {
                     </div>
                 </div>
             </div>
+            <Toaster />
+
 
         </>
     )

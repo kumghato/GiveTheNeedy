@@ -12,7 +12,7 @@ const VideoCarousel = () => {
 
     const Videos = [
         {
-            title: "Mobile Apps, Coming soon!!!",
+            title: "Mobile App, Coming soon!!!",
             video: VideoTwo,
 
         },
@@ -27,7 +27,7 @@ const VideoCarousel = () => {
 
         },
         {
-            title: "Mobile Apps, Coming soon!!!",
+            title: "Mobile App, Coming soon!!!",
             video: VideoFour,
 
         },

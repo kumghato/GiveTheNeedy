@@ -1,23 +1,51 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md'
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
+
+
 
 const FAQ = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const [isOpen, setIsOpen] = useState(false)
+    const Contact = () => {
+        return (
+            <>
+                <Link to={"/contact"} className='hover:underline text-blue-600'>Click Here</Link>
+            </>
+        )
+    }
+
+
 
     const faqData = [
         {
             question: "Q: How can I Donate?",
-            answer: `A: I don't know, ask Akhum.`
+            answer: `A: You can donate by downloading the Give The Needy App for Android and IOS.`
         },
         {
-            question: "Q: How can I receive donation?",
-            answer: `A: I don't know, ask Akhum.`
+            question: "Q: How can I receive donation as an Individual?",
+            answer: `A: As an individual, you can receive donation by registering in the GTN App by uploading your Aadhar details and other personal information and delivery address. `
+        },
+        {
+            question: "Q: How can I receive donation as an NGO/Social Organisation?",
+            answer: `A: As an NGO/Social Organisation, you can receive donation by registering in the GTN App by uploading your NGO/Org. Registration/License details and your organisation information and delivery address. `
+        },
+        {
+            question: "Q: How will I/We get the items delivered?",
+            answer: `A: Our logistic partners will deliver the items to your doorstep at nominal logistic charges. `
         },
         {
             question: "Q: Where is GiveTheNeedy located?",
-            answer: `A: Dimapur.`
-        },
+            answer: (
+                <>
+                    A: Dimapur, Nagaland. To get our physical office address, please <Contact />
+                </>
+            )
+        }
     ];
 
     const toggle = (i) => {

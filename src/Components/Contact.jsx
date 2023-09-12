@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FaPhoneAlt, FaWhatsapp, FaRegEnvelope } from 'react-icons/fa'
 import emailjs from 'emailjs-com'
 import Footer from './Footer';
@@ -14,6 +14,10 @@ const Contact = () => {
         e.target.reset()
         toast.success("Your Message has been sent.")
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <>

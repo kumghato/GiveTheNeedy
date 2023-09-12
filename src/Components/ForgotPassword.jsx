@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-hot-toast'
+import { Toaster, toast } from 'react-hot-toast'
 
 function ForgotPassword() {
+    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLinkLocal = "http://localhost:8000/"
+
+
     const [user, setUser] = useState({
         email: ""
     })
@@ -18,7 +22,7 @@ function ForgotPassword() {
         setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
     const handleSubmit = async () => {
-        const res = await axios.post('http://localhost:8000/forgot/password', user)
+        const res = await axios.post(`${serverLink}forgot/password`, user)
         if (res.data.status === 1) {
             toast.error("Password reset link sent to your Email")
             localStorage.setItem('mail', user.email)
@@ -44,6 +48,7 @@ function ForgotPassword() {
                 </form>
 
             </div >
+            <Toaster />
         </>
 
     )

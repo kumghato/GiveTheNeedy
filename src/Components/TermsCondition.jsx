@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const TermsCondition = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div className='mt-16 w-[80%] m-auto text-justify leading-loose p-10'>
-            < h1 className='text-2xl font-bold text-center'>Terms & Conditions for GiveTheNeedy App </h1>
+            < h1 className='text-2xl font-bold text-center'>Terms Of Use for GiveTheNeedy App </h1>
             <p>
                 <b className='leading-[4rem]'>1. Introduction</b> <br />
 
-                Welcome to Give The Needy App (“App”, “our”, “we” or “us”). By using our platform, you are agreeing to these Terms & Conditions (“Terms”). Please read them carefully.<br />
+                Welcome to Give The Needy App (“App”, “our”, “we” or “us”). By using our platform, you are agreeing to these <b><em>Terms Of Use</em></b> (“Terms”). Please read them carefully.<br />
 
 
 
@@ -21,6 +26,7 @@ const TermsCondition = () => {
                 <b className='leading-[4rem]'>3. Description of Service</b> <br />
 
                 Give The Needy App is a platform designed to facilitate charitable donations of food, essentials, clothing, furniture, cash, etc., to individuals in need. We partner with logistics companies to offer delivery services of the donated items to the recipient's doorstep.<br />
+
 
 
 
@@ -39,8 +45,8 @@ const TermsCondition = () => {
 
 
                 5.1 Delivery of donations will be facilitated through third-party logistic partners. While we aim to partner with reputable companies, we cannot guarantee the performance or behavior of these third parties.<br />
-
-                5.2 Any issues related to delivery should be addressed directly with the respective logistics partner.<br />
+                5.2 Logistic charges shall be borne by the respective donators as applicable. <br />
+                5.3 Any issues related to delivery after dispatch should be addressed directly with the respective logistic partner or in case of any communication issues with the concerned logistic partners please feel free to  <Link to={"/contact"} className='text-blue-400 hover:underline cursor-pointer'>Contact us</Link>.<br />
 
                 <b className='leading-[4rem]'>6. Limitation of Liability</b><br />
 
@@ -83,12 +89,13 @@ const TermsCondition = () => {
                 The App is provided “as is” and without any warranty of any kind, either express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, or non-infringement.<br />
 
 
+                <b className='leading-[4rem]'>13. Payment terms</b><br />
+                For each cash transaction, payment gateway fee of 3%, and a processing fee of 2% will be charged from the amount donated.<br />
+
 
                 <b className='leading-[4rem]'>13. Contact</b><br />
 
                 For any queries or clarifications regarding these Terms, please contact us at support@givetheneedy.org.in.<br />
-
-
 
                 By using Give The Needy App, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions.<br />
 

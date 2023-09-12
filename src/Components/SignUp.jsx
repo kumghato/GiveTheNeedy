@@ -1,22 +1,42 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { toast } from 'react-hot-toast'
+import React, { useRef, useState } from 'react'
+import { Toaster, toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
+import logo from '../Assets/Images/logo.png'
 
 const SignUp = () => {
+    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLinkLocal = "http://localhost:8000/"
+
     const navigate = useNavigate()
+    const [preview, setPreview] = useState("")
     const [createUser, setCreateUser] = useState({
         username: "",
         email: "",
-        password: ""
+        password: "",
+        image: ""
     })
+
+    const handleFileChange = (e) => {
+        console.log(e.target.files)
+        const [file] = e.target.files
+
+        setCreateUser({ ...createUser, image: file })
+        const objectUrl = URL.createObjectURL(file)
+        setPreview(objectUrl)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await axios.post('http://localhost:8000/create/user', createUser)
+        const res = await axios.post(`${serverLink}create/user`, createUser, {
+            headers: {
+                Authorization: localStorage.getItem('token')
+            }
+        })
         if (res.data.status === 1) {
             e.target.reset()
             navigate("/forum")
+            toast.success("Registered successfully")
         }
         else if (res.data.status === 0) {
             toast.error("Cannot register")
@@ -26,17 +46,28 @@ const SignUp = () => {
     const handleChange = (e) => {
         setCreateUser({ ...createUser, [e.target.name]: e.target.value })
 
-
     }
+
+    const fileInputRef = useRef();
+    const upload = () => {
+        fileInputRef.current.click()
+    }
+
     return (
         <>
-            <div className={`flex sm:flex-col w-full h-screen sm:items-center`}>
-                <div className={`border border-black w-[80%] sm:w-1/2 m-auto rounded-lg p-10 sm:h-[70%]`}>
-                    <div className='flex justify-between mb-10'>
+            <div className={`flex sm:flex-col w-full mt-20 sm:items-center`}>
+                <div className={`box-shadow w-[80%] sm:w-1/2 m-auto rounded-lg p-10 sm:h-[85%]`}>
+                    <div className='flex justify-center mb-10'>
                         <h1 className=" text-2xl font-bold">Register to continue</h1>
                     </div>
+                    <div className='m-auto w-40 h-[10rem] flex justify-center border border-black rounded-[50%] object-fill'>
+                        {preview ? <img src={preview} className='w-full h-full rounded-[50%]' /> : <img src={logo} className='w-full h-full rounded-[50%]' />}
+                    </div>
                     <div className="flex flex-col">
-                        <form action="/" method='post' onSubmit={handleSubmit}>
+                        <form action="/" method='POST' enctype="multipart/form-data" onSubmit={handleSubmit}>
+                            <div className='text-center p-5'>
+                                <button className='bg-[var(--primaryColor)] w-[12rem] m-auto text-white py-2 px-4 rounded-lg' onClick={upload}>Upload profile image</button>
+                            </div>
                             <label>Username</label>
                             <input
                                 placeholder="Username"
@@ -60,7 +91,16 @@ const SignUp = () => {
                                 type='password'
                                 required
                                 onChange={handleChange}
-                                className="p-2 resize-none border-black border rounded w-full" />
+                                className="p-2 mb-5 resize-none border-black border rounded w-full" />
+
+
+                            <input className="hidden"
+                                name="image"
+                                type="file"
+                                ref={fileInputRef}
+                                onChange={(e) => { handleFileChange(e) }}
+                                data-sb-validations="required,email"
+                            />
                             <button
                                 className="w-full px-10 py-2 mt-5 rounded text-white bg-[var(--primaryColor)] hover:border hover:border-[var(--primaryColor)] hover:bg-white hover:text-[var(--primaryColor)]"
                                 id="submitButton"
@@ -72,7 +112,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
-
+            <Toaster />
         </>
     )
 }

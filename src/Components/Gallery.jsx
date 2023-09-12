@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../Assets/Images/logo.png'
 import Footer from './Footer'
@@ -16,6 +16,9 @@ const Gallery = () => {
             link: "/photo-gallery"
         }
     ]
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <>

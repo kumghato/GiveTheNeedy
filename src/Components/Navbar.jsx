@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../Assets/Images/logo.png'
+import logo from '../Assets/Images/GTN-Logo_new.png'
 import { Link, NavLink } from 'react-router-dom'
 import { BiMenu, BiX } from 'react-icons/bi'
 
@@ -16,19 +16,19 @@ const Navbar = () => {
             <>
                 <NavLink to={"/"}><a className='hover:overline' onClick={() => isSetOpen(false)}>HOME</a></NavLink>
                 <NavLink to={"/about_us"}><a className='hover:overline' onClick={() => isSetOpen(false)}>ABOUT US</a></NavLink>
-                <NavLink to={"/gallery"}><a className='hover:overline' onClick={() => isSetOpen(false)}>GALLERY</a></NavLink>
-                <NavLink to={"/contact"}><a className='hover:overline' onClick={() => isSetOpen(false)}>CONTACT</a></NavLink>
                 <NavLink to={"/forum"}><a className='hover:overline' onClick={() => isSetOpen(false)}>FORUM</a></NavLink>
+                <NavLink to={"/gallery"}><a className='hover:overline' onClick={() => isSetOpen(false)}>GALLERY</a></NavLink>
+                <NavLink to={"/contact"}><a className='hover:overline' onClick={() => isSetOpen(false)}>CONTACT US</a></NavLink>
 
             </>
         )
     }
     return (
         <>
-            <nav className='flex py-1 fixed top-0 bg-white w-full z-20 items-center justify-between px-10 md:px-20'>
+            <nav className='flex py-3 fixed top-0 bg-white w-full z-20 items-center justify-between px-10 md:px-20'>
                 <div>
                     <Link to={"/"}>
-                        <img src={logo} alt="logo" className='w-14' />
+                        <img src={logo} alt="logo" className='w-40' />
                     </Link>
                 </div>
                 <div className='md:flex hidden gap-10 font-semibold'>

@@ -11,16 +11,6 @@ const Testimonials = () => {
             message: `Can't wait for the App to launch.`,
             stars: 5,
         },
-        {
-            name: 'Jane Smith',
-            message: 'Nulla gravida arcu eu sapien consectetur, nec commodo felis volutpat.',
-            stars: 5,
-        },
-        {
-            name: 'Suhel Smith',
-            message: 'Nulla gravida arcu eu sapien consectetur, nec commodo felis volutpat.',
-            stars: 5,
-        },
         // Add more testimonials as needed
     ];
 

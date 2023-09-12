@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Privacypolicy = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div className='mt-16 w-[80%] m-auto text-justify leading-loose p-10'>
             <h1 className='text-2xl font-bold text-center'>Privacy Policy for GiveTheNeedy App </h1>
