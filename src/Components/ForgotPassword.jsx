@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { Toaster, toast } from 'react-hot-toast'
 
 function ForgotPassword() {
-    const serverLink = "http://43.204.149.22:8000/"
+
+    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
     const serverLinkLocal = "http://localhost:8000/"
 
 

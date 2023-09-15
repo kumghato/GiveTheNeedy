@@ -8,7 +8,8 @@ import { Link, useParams } from 'react-router-dom';
 
 const MyPost = () => {
     const serverLink3 = "https://givetheneedy-server.onrender.com/"
-    const serverLink = "http://43.204.149.22:8000/"
+
+    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
     const serverLink2 = "http://localhost:8000/"
 
     const [data, setData] = useState([])

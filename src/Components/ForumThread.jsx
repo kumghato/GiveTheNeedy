@@ -13,7 +13,8 @@ import { AiFillLinkedin } from 'react-icons/ai'
 import { AiFillInstagram } from 'react-icons/ai'
 
 const ForumThread = () => {
-    const serverLink = "http://43.204.149.22:8000/"
+
+    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
     const serverLinkLocal = "http://localhost:8000/"
 
     const isAuthenticate = localStorage.getItem("token")

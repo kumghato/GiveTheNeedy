@@ -4,7 +4,8 @@ import { Toaster, toast } from 'react-hot-toast'
 import Cookies from 'js-cookie'
 
 const LoginModal = ({ closeModal }, { openModal }) => {
-    const serverLink = "http://43.204.149.22:8000/"
+
+    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
     const serverLink2 = "https://xksaiu7dth.execute-api.ap-south-1.amazonaws.com/default/Givetheneedy/"
     const serverLinkLocal = "http://localhost:8000/"
 
