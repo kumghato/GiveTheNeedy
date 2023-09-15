@@ -7,8 +7,9 @@ import { VscAccount } from 'react-icons/vsc'
 import { Link, useParams } from 'react-router-dom';
 
 const MyPost = () => {
-    const serverLink = "https://givetheneedy-server.onrender.com/"
-    const serverLinkLocal = "http://localhost:8000/"
+    const serverLink3 = "https://givetheneedy-server.onrender.com/"
+    const serverLink = "http://43.204.149.22:8000/"
+    const serverLink2 = "http://localhost:8000/"
 
     const [data, setData] = useState([])
     const [userData, setUserData] = useState([])
@@ -24,7 +25,6 @@ const MyPost = () => {
                 Authorization: localStorage.getItem('token')
             }
         })
-        console.log(res)
         if (res.data.status === 1) {
             setData(res.data.response);
         }
@@ -35,6 +35,7 @@ const MyPost = () => {
                 Authorization: localStorage.getItem('token')
             }
         });
+        console.log(res)
         if (res.data.status === 1) {
             setUserData(res.data.response);
         }
@@ -50,27 +51,35 @@ const MyPost = () => {
             <NavBarSide />
             <div className='sm:absolute  sm:left-[15%] w-full sm:w-[80%] '>
                 <div className=' bg-gray-100 p-5 w-full '>
-                    <div className=' sm:m-auto w-[30%] sm:w-[80%] items-center sm:flex '>
-                        <div className='p-10 flex items-center bg-white rounded-[50%] sm:w-40 h-[7rem] sm:h-40'>
-                            <img src={logo} alt="Profile" className='w-20' />
-                        </div>
-                        <div className='p-5 sm:ms-10'>
+                    <div className=' m-auto w-[100%] sm:w-[80%] items-center sm:flex '>
+
+                        <div className='p-5 w-full'>
                             {isAuthenticate ? (<>
                                 {userData.map((item) => {
                                     return (
-                                        <div>
-                                            <h1 className='text-2xl font-bold'>{item.username}</h1>
-                                            <h1>{item.email}</h1>
-                                            <div className='flex gap-4 mt-6'>
-                                                <Link to={`/edit_profile/${item._id}`} className='text-blue-500'>Edit profile</Link>
+                                        <div className=' w-full sm:flex gap-3 sm:items-center'>
+                                            <div className='m-auto sm:m-0 flex items-center bg-white rounded-[50%] w-[7rem] sm:w-40 h-[7rem] sm:h-40'>
+                                                {item.image !== null ? <img src={`${serverLink + item.image}`} alt="Profile" className='w-full h-full rounded-[50%]' /> : <img src={logo} alt="Profile" className='w-full h-full rounded-[50%]' />}
+
+                                            </div>
+                                            <div className='mt-4 border-t-2 border-[var(--primaryColor)] flex flex-col sm:ms-10 m-auto p-5 sm:border-0'>
+                                                <h1 className='ps-2 pb-2 pe-2  text-2xl font-bold border-b-2 border-gray-300 sm:border-0'>{item.username}</h1>
+                                                <h1 className='p-2 border-b-2 border-gray-300 sm:border-0'>{item.email}</h1>
+                                                <div className='p-2 flex gap-4'>
+                                                    <Link to={`/edit_profile/${item._id}`} className='text-blue-500'>Edit profile</Link>
+                                                </div>
                                             </div>
                                         </div>
-
                                     )
                                 })}
                             </>) : (
+                                <div className='w-full flex m-auto items-center gap-10'>
+                                    <div className='flex items-center bg-white rounded-[50%] sm:w-40 h-[7rem] sm:h-40'>
+                                        <img src={logo} alt="Profile" className='w-full h-full rounded-[50%]' />
+                                    </div>
+                                    <h1 className='text-2xl font-bold'>Please login to continue</h1>
 
-                                <h1 className='text-2xl font-bold'>Please login to continue</h1>
+                                </div>
 
                             )}
 
@@ -104,7 +113,7 @@ const MyPost = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 

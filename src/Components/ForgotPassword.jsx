@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Toaster, toast } from 'react-hot-toast'
 
 function ForgotPassword() {
-    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLink = "http://43.204.149.22:8000/"
     const serverLinkLocal = "http://localhost:8000/"
 
 

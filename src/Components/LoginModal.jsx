@@ -4,7 +4,8 @@ import { Toaster, toast } from 'react-hot-toast'
 import Cookies from 'js-cookie'
 
 const LoginModal = ({ closeModal }, { openModal }) => {
-    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLink = "http://43.204.149.22:8000/"
+    const serverLink2 = "https://xksaiu7dth.execute-api.ap-south-1.amazonaws.com/default/Givetheneedy/"
     const serverLinkLocal = "http://localhost:8000/"
 
     const [user, setUser] = useState({
@@ -64,7 +65,7 @@ const LoginModal = ({ closeModal }, { openModal }) => {
                                 >
                                     Login
                                 </button>
-                                <a href="/register" className='ms-auto text-[var(--primaryColor)]'>Forgot Password?</a>
+                                <a href="/forgot-password" className='ms-auto text-[var(--primaryColor)]'>Forgot Password?</a>
                             </div>
 
                             <div className='text-center items-center p-10'>

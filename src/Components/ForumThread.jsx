@@ -13,7 +13,7 @@ import { AiFillLinkedin } from 'react-icons/ai'
 import { AiFillInstagram } from 'react-icons/ai'
 
 const ForumThread = () => {
-    const serverLink = "https://givetheneedy-server.onrender.com/"
+    const serverLink = "http://43.204.149.22:8000/"
     const serverLinkLocal = "http://localhost:8000/"
 
     const isAuthenticate = localStorage.getItem("token")

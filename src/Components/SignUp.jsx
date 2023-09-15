@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../Assets/Images/logo.png'
 
 const SignUp = () => {
-    const serverLink = "https://givetheneedy-server.onrender.com/"
-    const serverLinkLocal = "http://localhost:8000/"
+    const serverLink = "http://43.204.149.22:8000/"
+    const serverLink2 = "http://localhost:8000/"
 
     const navigate = useNavigate()
     const [preview, setPreview] = useState("")
@@ -28,7 +28,12 @@ const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await axios.post(`${serverLink}create/user`, createUser, {
+        const formdata = new FormData()
+        Object.entries(createUser).forEach(([key, value]) => {
+            formdata.append(key, value)
+        })
+
+        const res = await axios.post(`${serverLink}create/user`, formdata, {
             headers: {
                 Authorization: localStorage.getItem('token')
             }
@@ -64,10 +69,11 @@ const SignUp = () => {
                         {preview ? <img src={preview} className='w-full h-full rounded-[50%]' /> : <img src={logo} className='w-full h-full rounded-[50%]' />}
                     </div>
                     <div className="flex flex-col">
+                        <div className='text-center p-5'>
+                            <button className='bg-[var(--primaryColor)] w-[12rem] m-auto text-white py-2 px-4 rounded-lg' onClick={upload}>Upload profile image</button>
+                        </div>
                         <form action="/" method='POST' enctype="multipart/form-data" onSubmit={handleSubmit}>
-                            <div className='text-center p-5'>
-                                <button className='bg-[var(--primaryColor)] w-[12rem] m-auto text-white py-2 px-4 rounded-lg' onClick={upload}>Upload profile image</button>
-                            </div>
+
                             <label>Username</label>
                             <input
                                 placeholder="Username"
@@ -105,6 +111,7 @@ const SignUp = () => {
                                 className="w-full px-10 py-2 mt-5 rounded text-white bg-[var(--primaryColor)] hover:border hover:border-[var(--primaryColor)] hover:bg-white hover:text-[var(--primaryColor)]"
                                 id="submitButton"
                                 type="submit"
+
                             >
                                 Register
                             </button>

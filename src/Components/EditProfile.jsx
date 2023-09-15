@@ -8,11 +8,15 @@ import { Toaster, toast } from 'react-hot-toast';
 
 const EditProfile = () => {
 
-    const serverLink2 = "http://13.233.155.156:8000/"
-    const serverLink = "https://givetheneedy-server.onrender.com/"
-    const serverLinkLocal = "http://localhost:8000/"
+    const serverLink = "http://43.204.149.22:8000/"
+    const serverLink2 = "https://givetheneedy-server.onrender.com/"
+    const serverLink3 = "http://localhost:8000/"
 
-    const [singleUser, setSingleUser] = useState({})
+    const [singleUser, setSingleUser] = useState({
+        name: "",
+        email: "",
+        image: ""
+    })
     const [preview, setPreview] = useState("")
     const params = useParams()
     const navigate = useNavigate()
@@ -37,7 +41,10 @@ const EditProfile = () => {
             setSingleUser(res.data.response)
         }
     }
-    const handleUpdate = async () => {
+    const handleUpdate = async (e) => {
+        e.preventDefault()
+
+
         const update = await axios.put(`${serverLink}update/user/${params.id}`, singleUser, {
             headers: {
                 Authorization: localStorage.getItem('token')
@@ -53,7 +60,9 @@ const EditProfile = () => {
             headers: {
                 Authorization: localStorage.getItem('token')
             }
-        });
+
+        }
+        );
         if (res.data.status === 1) {
             toast.success("User deleted successfully")
             toast.success("User profile deleted successfully")
@@ -83,7 +92,7 @@ const EditProfile = () => {
                     </div>
                     <div className='flex flex-col p-10 sm:w-full bg-gray-100 gap-2'>
                         <div className=' bg-white rounded-[50%] w-40 h-[10rem] m-auto'>
-                            {preview ? <img src={preview} className='w-full h-full rounded-[50%]' /> : <img src={logo} alt="Profile" className='w-full h-full rounded-[50%]' />}
+                            {preview ? <img src={preview} className='w-full h-full rounded-[50%]' /> : <img src={`${serverLink + singleUser.image}`} className='w-full h-full rounded-[50%]' />}
 
                             <input className="hidden"
                                 //w-[10rem] h-[10rem] cursor-pointer absolute top-40 left-[12rem] sm:top-10 sm:left-[30.6rem] rounded-[50%] opacity-0
@@ -95,7 +104,7 @@ const EditProfile = () => {
                                 data-sb-validations="required,email"
                             />
                         </div>
-                        <button className='bg-[var(--primaryColor)] w-[12rem] m-auto text-white py-2 px-4 rounded-lg' onClick={() => fileInputRef.current.click()} >Upload Profile Image</button>
+                        {/* <button className='bg-[var(--primaryColor)] w-[12rem] m-auto text-white py-2 px-4 rounded-lg' onClick={() => fileInputRef.current.click()} >Upload Profile Image</button> */}
 
                         <label>Username</label>
                         <input className='border border-black rounded w-full p-2' name='username' value={singleUser.username} onChange={(e) => { handleEditChange(e) }} />

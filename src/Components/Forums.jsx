@@ -16,8 +16,9 @@ import NavBarSide from './NavBarSide'
 import Footer from './Footer'
 
 const Forums = () => {
-    const serverLink = "https://givetheneedy-server.onrender.com/"
-    const serverLinkLocal = "http://localhost:8000/"
+
+    const serverLink = "http://43.204.149.22:8000/"
+
 
     const [threadData, setThreadData] = useState({
         title: "",
