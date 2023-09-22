@@ -22,15 +22,15 @@ const NavBarSide = () => {
         <div>
             {isAuthenticate ? (
                 <>
-                    <nav className='bg-[var(--primaryColor)] text-white px-10 py-3 md:w-[11%] md:h-screen md:fixed'>
-                        <div className='flex sm:flex-col gap-10 justify-between'>
-                            <h1 className='hidden md:flex font-bold text-2xl'>Forum</h1>
-                            <div className='sm:hidden w-full flex justify-evenly text-2xl'>
+                    <nav className='bg-[var(--primaryColor)] text-white px-10 py-3 w-full lg:w-[11%] lg:h-screen lg:fixed'>
+                        <div className='flex lg:flex-col gap-10 justify-between'>
+                            <h1 className='hidden lg:flex font-bold text-2xl'>Forum</h1>
+                            <div className='lg:hidden w-full flex justify-evenly text-2xl'>
                                 <Link to={"/my/profile"}><VscAccount /></Link>
                                 <Link to={"/forum"} ><MdOutlineForum /></Link>
                                 <Link onClick={logout}><BiLogOut /></Link>
                             </div>
-                            <div className='hidden sm:flex sm:flex-col sm:gap-10'>
+                            <div className='hidden lg:flex md:flex-col md:gap-10'>
                                 <Link to={"/my/profile"}>My Profile</Link>
                                 <Link to={"/forum"}>All Post</Link>
                                 <Link onClick={logout}>Logout</Link>
@@ -49,7 +49,8 @@ const NavBarSide = () => {
                                 <Link to={"/forum"} ><MdOutlineForum /></Link>
                                 <Link onClick={() => { setPopUp(!popUp) }}><BiLogIn /></Link>
                             </div>
-                            <div className='hidden sm:flex sm:flex-col sm:gap-10'>
+
+                            <div className='hidden md:flex md:flex-col md:gap-10'>
                                 <Link to={"/my/profile"}>My Profile</Link>
                                 <Link to={"/forum"}>All Post</Link>
                                 <Link onClick={() => { setPopUp(!popUp) }}>Login</Link>

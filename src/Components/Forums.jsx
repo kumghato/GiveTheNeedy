@@ -18,7 +18,8 @@ import Footer from './Footer'
 const Forums = () => {
 
 
-    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
+    const serverLink = "https://server.givetheneedy.org.in/"
+    const serverLink1 = "http://localhost:8000/"
 
 
     const [threadData, setThreadData] = useState({
@@ -104,7 +105,7 @@ const Forums = () => {
             toggle()
             toast.success("Login Successful")
         } else {
-            toast.error(res.data.message)
+            toast.error("Incorrect credentials")
         }
     }
 
@@ -135,13 +136,13 @@ const Forums = () => {
     }, [])
 
     return (
-        <div className='mt-16 md:flex'>
+        <div className='mt-16 lg:flex'>
             <NavBarSide />
 
             {/* ============================================================================================================= */}
 
 
-            <div className='sm:absolute sm:left-[15%] sm:w-[80%] py-5 pt-10'>
+            <div className='sm:absolute left-[10%] lg:left-[15%] sm:w-[80%] py-5 pt-10'>
                 <div className='text-center w-full bg-gray-100 p-5'>
                     <button className='text-white w-full sm:w-[30%] bg-[var(--primaryColor)] rounded-lg py-2 px-3 ' type='submit' onClick={() => toggle()}>Ask Question</button>
                 </div>
@@ -188,7 +189,7 @@ const Forums = () => {
             {isAuthenticate ? (
                 <>
                     <div className={`flex flex-col bg-[rgba(0,0,0,40%)] w-full h-screen items-center fixed top-10 justify-center ${popUp ? "fixed" : "hidden"}`}>
-                        <div className='bg-white w-[80%] sm:w-1/2 m-auto rounded-lg p-5 h-[70%]'>
+                        <div className='bg-white w-[80%] sm:w-1/2 m-auto rounded-lg p-5 '>
                             <div className='flex justify-between'>
                                 <h1 className=" text-2xl font-bold">Raise your Question</h1>
                                 <button onClick={() => setPopUp(false)} className='px-4 font-bold border border-black rounded-lg'>X</button>
@@ -251,9 +252,9 @@ const Forums = () => {
                                         required
                                         onChange={handleChangeUser}
                                         className="p-2 resize-none border-black border rounded w-full" />
-                                    <div className='flex items-center'>
+                                    <div className='flex items-center mt-5'>
                                         <button
-                                            className="px-10 py-2 mt-5 rounded text-white bg-[var(--primaryColor)] hover:border hover:border-[var(--primaryColor)] hover:bg-white hover:text-[var(--primaryColor)]"
+                                            className="px-10 py-2  rounded text-white bg-[var(--primaryColor)] hover:border hover:border-[var(--primaryColor)] hover:bg-white hover:text-[var(--primaryColor)]"
                                             id="submitButton"
                                             type="submit"
                                         >

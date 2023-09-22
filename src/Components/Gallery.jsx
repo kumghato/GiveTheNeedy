@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../Assets/Images/logo.png'
+import logo from '../Assets/Images/160pixel-for-web-GTN-logo.png'
 import Footer from './Footer'
 
 const Gallery = () => {
@@ -33,7 +33,7 @@ const Gallery = () => {
                             return (
                                 <div className='box-shadow p-5 rounded-lg text-center pb-20'>
                                     <h1 className='text-xl sm:text-4xl font-bold text-[var(--primaryColor)]'>{item.title}</h1>
-                                    <img src={logo} alt="logo" className='m-auto my-10' />
+                                    <img src={logo} alt="logo" className='m-auto my-10 w-1/3' />
                                     <Link to={item.link}
                                         className='bg-[var(--primaryColor)] px-4 py-2 text-white rounded-lg mt-10 hover:bg-white hover:border-[var(--primaryColor)] hover:border hover:text-[var(--primaryColor)]'>
                                         {item.buttonText}

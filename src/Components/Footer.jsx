@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../Assets/Images/logo.png'
+import logo from '../Assets/Images/160pixel-for-web-GTN-logo.png'
 import { MdLocationPin } from 'react-icons/md'
 import { BiSolidPhoneCall } from 'react-icons/bi'
 import { FaYoutube } from 'react-icons/fa';

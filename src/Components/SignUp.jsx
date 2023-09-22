@@ -6,7 +6,7 @@ import logo from '../Assets/Images/logo.png'
 
 const SignUp = () => {
 
-    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
+    const serverLink = "https://server.givetheneedy.org.in/"
     const serverLink2 = "http://localhost:8000/"
 
     const navigate = useNavigate()
@@ -28,25 +28,30 @@ const SignUp = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        const formdata = new FormData()
-        Object.entries(createUser).forEach(([key, value]) => {
-            formdata.append(key, value)
-        })
+        try {
+            e.preventDefault()
+            const formdata = new FormData()
+            Object.entries(createUser).forEach(([key, value]) => {
+                formdata.append(key, value)
+            })
 
-        const res = await axios.post(`${serverLink}create/user`, formdata, {
-            headers: {
-                Authorization: localStorage.getItem('token')
+            const res = await axios.post(`${serverLink}create/user`, formdata)
+            console.log('####error####', res)
+            if (res.data.status === 1) {
+                e.target.reset()
+                toast.success("Registered successfully")
+                setTimeout(navigate("/forum"), 3000)
+
+
             }
-        })
-        if (res.data.status === 1) {
-            e.target.reset()
-            navigate("/forum")
-            toast.success("Registered successfully")
+            else if (res.data.status === 0) {
+                toast.error("Cannot register")
+            }
+
+        } catch (error) {
+            console.log(error)
         }
-        else if (res.data.status === 0) {
-            toast.error("Cannot register")
-        }
+
     }
 
     const handleChange = (e) => {
@@ -66,14 +71,14 @@ const SignUp = () => {
                     <div className='flex justify-center mb-10'>
                         <h1 className=" text-2xl font-bold">Register to continue</h1>
                     </div>
-                    <div className='m-auto w-40 h-[10rem] flex justify-center border border-black rounded-[50%] object-fill'>
+                    {/* <div className='m-auto w-40 h-[10rem] flex justify-center border border-black rounded-[50%] object-fill'>
                         {preview ? <img src={preview} className='w-full h-full rounded-[50%]' /> : <img src={logo} className='w-full h-full rounded-[50%]' />}
-                    </div>
+                    </div> */}
                     <div className="flex flex-col">
-                        <div className='text-center p-5'>
+                        {/* <div className='text-center p-5'>
                             <button className='bg-[var(--primaryColor)] w-[12rem] m-auto text-white py-2 px-4 rounded-lg' onClick={upload}>Upload profile image</button>
-                        </div>
-                        <form action="/" method='POST' enctype="multipart/form-data" onSubmit={handleSubmit}>
+                        </div> */}
+                        <form action="/" method='POST' enctype="multipart/form-data" onSubmit={(e) => handleSubmit(e)}>
 
                             <label>Username</label>
                             <input
@@ -81,7 +86,7 @@ const SignUp = () => {
                                 name="username"
                                 type='text'
                                 required
-                                onChange={handleChange}
+                                onChange={(e) => handleChange(e)}
                                 className="p-2 mb-5 resize-none border-black border rounded w-full" />
                             <label>Email</label>
                             <input
@@ -89,7 +94,7 @@ const SignUp = () => {
                                 name="email"
                                 type='email'
                                 required
-                                onChange={handleChange}
+                                onChange={(e) => handleChange(e)}
                                 className="p-2 mb-5 resize-none border-black border rounded w-full" />
                             <label >Password</label>
                             <input
@@ -97,7 +102,7 @@ const SignUp = () => {
                                 name="password"
                                 type='password'
                                 required
-                                onChange={handleChange}
+                                onChange={(e) => handleChange(e)}
                                 className="p-2 mb-5 resize-none border-black border rounded w-full" />
 
 

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import NavBarSide from './NavBarSide';
 import logo from '../Assets/Images/logo.png'
+import user from '../Assets/Images/user.jpg'
 
 import { VscAccount } from 'react-icons/vsc'
 import { Link, useParams } from 'react-router-dom';
@@ -9,7 +10,7 @@ import { Link, useParams } from 'react-router-dom';
 const MyPost = () => {
     const serverLink3 = "https://givetheneedy-server.onrender.com/"
 
-    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
+    const serverLink = "https://server.givetheneedy.org.in/"
     const serverLink2 = "http://localhost:8000/"
 
     const [data, setData] = useState([])
@@ -48,9 +49,9 @@ const MyPost = () => {
 
 
     return (
-        <div className='mt-16 md:flex'>
+        <div className='mt-16 lg:flex'>
             <NavBarSide />
-            <div className='sm:absolute  sm:left-[15%] w-full sm:w-[80%] '>
+            <div className='sm:absolute left-[10%] lg:left-[15%] w-full sm:w-[80%] mt-5 lg:mt-0'>
                 <div className=' bg-gray-100 p-5 w-full '>
                     <div className=' m-auto w-[100%] sm:w-[80%] items-center sm:flex '>
 
@@ -60,7 +61,7 @@ const MyPost = () => {
                                     return (
                                         <div className=' w-full sm:flex gap-3 sm:items-center'>
                                             <div className='m-auto sm:m-0 flex items-center bg-white rounded-[50%] w-[7rem] sm:w-40 h-[7rem] sm:h-40'>
-                                                {item.image !== null ? <img src={`${serverLink + item.image}`} alt="Profile" className='w-full h-full rounded-[50%]' /> : <img src={logo} alt="Profile" className='w-full h-full rounded-[50%]' />}
+                                                <img src={user} alt="Profile" className='w-full h-full rounded-[50%]' />
 
                                             </div>
                                             <div className='mt-4 border-t-2 border-[var(--primaryColor)] flex flex-col sm:ms-10 m-auto p-5 sm:border-0'>
@@ -76,7 +77,7 @@ const MyPost = () => {
                             </>) : (
                                 <div className='w-full flex m-auto items-center gap-10'>
                                     <div className='flex items-center bg-white rounded-[50%] sm:w-40 h-[7rem] sm:h-40'>
-                                        <img src={logo} alt="Profile" className='w-full h-full rounded-[50%]' />
+                                        <img src={user} alt="Profile" className='w-full h-full rounded-[50%]' />
                                     </div>
                                     <h1 className='text-2xl font-bold'>Please login to continue</h1>
 

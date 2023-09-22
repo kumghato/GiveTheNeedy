@@ -14,8 +14,8 @@ import { AiFillInstagram } from 'react-icons/ai'
 
 const ForumThread = () => {
 
-    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
-    const serverLinkLocal = "http://localhost:8000/"
+    const serverLink = "https://server.givetheneedy.org.in/"
+    const serverLink2 = "http://localhost:8000/"
 
     const isAuthenticate = localStorage.getItem("token")
     let params = useParams()
@@ -46,7 +46,7 @@ const ForumThread = () => {
             localStorage.setItem("token", res.data.token)
             toast.success("Login Successful")
         } else {
-            toast.error(res.data.message)
+            toast.error("Incorrect credentials")
         }
     }
 
@@ -97,17 +97,17 @@ const ForumThread = () => {
     return (
         <>
 
-            <div className='mt-16 md:flex'>
+            <div className='mt-16 lg:flex'>
                 <NavBarSide />
                 <div>
-                    <div className='sm:absolute sm:left-[15%] sm:w-[80%] py-5 pt-10'>
+                    <div className='sm:absolute left-[10%] lg:left-[15%] sm:w-[80%] py-5 pt-10'>
                         <div className='sm:flex gap-2 w-full mt-2'>
                             <div className='p-10 sm:w-full bg-gray-100'>
                                 <div className='sticky top-16 px-5 py-3 box-shadow rounded my-2 w-full  bg-gray-100 '>
-                                    <div className='flex'>
-                                        <div className='flex items-center'>
-                                            <VscAccount className='text-4xl me-10' />
-                                        </div>
+                                    <div className='flex sm:p-5'>
+                                        {/* <div className='flex justify-center p-2 sm:p-0'>
+                                            <VscAccount className='text-4xl me-5' />
+                                        </div> */}
                                         <div className='w-full'>
                                             <h5 className='font-bold text-2xl mb-2'>{data.title}</h5>
                                             <p>{data.post}</p>

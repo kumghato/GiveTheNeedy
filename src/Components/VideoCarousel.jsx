@@ -49,7 +49,7 @@ const VideoCarousel = () => {
                     {Videos.map((item, index) => (
                         <div key={index} className={`mb-10`}>
                             <div className='border border-black p-5 rounded-xl m-auto w-full'>
-                                <ReactPlayer
+                                {/* <ReactPlayer
                                     controls={false}
                                     loop={true}
                                     playing={true}
@@ -58,7 +58,10 @@ const VideoCarousel = () => {
                                     width="100%"
                                     height={400}
                                     style={{ borderRadius: "5rem" }}
-                                />
+                                /> */}
+                                <video autoPlay="autoplay" loop muted style={{ width: "100%", height: "400px" }}>
+                                    <source src={item.video} />
+                                </video>
                                 <h3 className='mt-4 font-semibold text-xl' >{item.title}</h3>
                             </div>
                         </div>

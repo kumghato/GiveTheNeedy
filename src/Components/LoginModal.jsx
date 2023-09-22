@@ -5,9 +5,8 @@ import Cookies from 'js-cookie'
 
 const LoginModal = ({ closeModal }, { openModal }) => {
 
-    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
-    const serverLink2 = "https://xksaiu7dth.execute-api.ap-south-1.amazonaws.com/default/Givetheneedy/"
-    const serverLinkLocal = "http://localhost:8000/"
+    const serverLink = "https://server.givetheneedy.org.in/"
+    const serverLink2 = "http://localhost:8000/"
 
     const [user, setUser] = useState({
         email: "",
@@ -28,7 +27,7 @@ const LoginModal = ({ closeModal }, { openModal }) => {
             localStorage.setItem("token", res.data.token)
             toast.success("Login Successful")
         } else {
-            toast.error(res.data.message)
+            toast.error("Incorrect credentials")
         }
     }
 
@@ -58,9 +57,9 @@ const LoginModal = ({ closeModal }, { openModal }) => {
                                 required
                                 onChange={handleChangeUser}
                                 className="p-2 resize-none border-black border rounded w-full" />
-                            <div className='flex items-center'>
+                            <div className='flex items-center mt-5'>
                                 <button
-                                    className="px-10 py-2 mt-5 rounded text-white bg-[var(--primaryColor)] hover:border hover:border-[var(--primaryColor)] hover:bg-white hover:text-[var(--primaryColor)]"
+                                    className="px-10 py-2  rounded text-white bg-[var(--primaryColor)] hover:border hover:border-[var(--primaryColor)] hover:bg-white hover:text-[var(--primaryColor)]"
                                     id="submitButton"
                                     type="submit"
                                 >

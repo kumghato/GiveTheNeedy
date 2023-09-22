@@ -3,14 +3,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import NavBarSide from './NavBarSide';
 import logo from '../Assets/Images/logo.png'
+import user from '../Assets/Images/user.jpg'
 import { Toaster, toast } from 'react-hot-toast';
 
 
 const EditProfile = () => {
 
-    const serverLink = "http://ec2-65-0-6-8.ap-south-1.compute.amazonaws.com:8000/"
-    const serverLink2 = "https://givetheneedy-server.onrender.com/"
-    const serverLink3 = "http://localhost:8000/"
+    const serverLink = "https://server.givetheneedy.org.in/"
+    const serverLink2 = "http://localhost:8000/"
 
     const [singleUser, setSingleUser] = useState({
         name: "",
@@ -64,10 +64,9 @@ const EditProfile = () => {
         }
         );
         if (res.data.status === 1) {
-            toast.success("User deleted successfully")
-            toast.success("User profile deleted successfully")
             localStorage.clear()
-            navigate("/forums")
+            toast.success("User profile deleted successfully")
+            setTimeout(navigate("/forum"), 4000)
         }
 
     };
@@ -84,7 +83,7 @@ const EditProfile = () => {
 
     return (
         <>
-            <div className='mt-16 md:flex'>
+            <div className='mt-16 lg:flex'>
                 <NavBarSide />
                 <div className='sm:absolute sm:right-16 w-full sm:w-[75%]'>
                     <div class="form-floating mb-3">
@@ -92,12 +91,12 @@ const EditProfile = () => {
                     </div>
                     <div className='flex flex-col p-10 sm:w-full bg-gray-100 gap-2'>
                         <div className=' bg-white rounded-[50%] w-40 h-[10rem] m-auto'>
-                            {preview ? <img src={preview} className='w-full h-full rounded-[50%]' /> : <img src={`${serverLink + singleUser.image}`} className='w-full h-full rounded-[50%]' />}
+                            <img src={user} className='w-full h-full rounded-[50%]' />
 
                             <input className="hidden"
                                 //w-[10rem] h-[10rem] cursor-pointer absolute top-40 left-[12rem] sm:top-10 sm:left-[30.6rem] rounded-[50%] opacity-0
                                 name="image"
-                                accept='image/*'
+                                // accept='image/*'
                                 type="file"
                                 ref={fileInputRef}
                                 onChange={(e) => { handleFileChange(e) }}
