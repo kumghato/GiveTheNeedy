@@ -20,9 +20,9 @@ const Home = () => {
                     <img className='h-[300px] sm:h-screen w-full' src={background} alt="background" />
                 </div>
                 <div className='w-[85%] sm:w-[90%] absolute top-[10%] sm:top-[15%] lg:top-[11%] ms-14 sm:ms-28'>
-                    <div className='w-[80%] lg:w-[70%] bg-white/[.24] rounded-lg shadow-2xl'>
+                    <div className='w-[90%] lg:w-[70%] bg-white/[.24] rounded-lg shadow-2xl'>
                         <h1
-                            className=' text-[.8rem] lg:text-[4rem] md:text-[3rem] sm:text-[2.5rem] font-semibold tracking-[0.5rem] sm:tracking-[0.7rem] lg:tracking-[1rem] leading-snug text-shadow p-5 text-[var(--primaryColor)]'>
+                            className=' text-[.8rem] lg:text-[4rem] md:text-[3rem] sm:text-[1.5rem] font-semibold tracking-[0.5rem] sm:tracking-[0.7rem] lg:tracking-[1rem] leading-snug text-shadow p-5 text-[var(--primaryColor)]'>
                             A
                             <span className='text-white'> CONTEMPORARY</span><br />
                             GIVING
@@ -42,12 +42,12 @@ const Home = () => {
                     </div>
                     <Link to={"/forum"} className='hover:bg-white hover:text-[var(--primaryColor)] hover:border hover:border-[var(--primaryColor)] bg-[#fc6a03] px-[0.5rem] py-[0.1rem] md:px-5 md:py-3 rounded-[2rem] text-white md:font-bold mt-3 md:mt-5 lg:mt-10 text-[0.47rem] sm:mt-20 sm:text-lg'>Join us today</Link>
 
-                    <div className='text-center text-[.5rem] sm:text-lg md:text-2xl tracking-widest mt-5 sm:mt-20 text-shadow lg:leading-9'>
+                    <div className='relative bottom-0 text-center text-[.5rem] sm:text-lg md:text-2xl tracking-widest sm:mt-20 text-shadow lg:leading-9'>
                         <p className='text-white'>
-                            <span className='text-[var(--primaryColor)]'><em><b>Donate</b></em></span> or  <span className='text-[var(--primaryColor)]'><em><b>Receive</b></em></span> as an INDIVIDUAL.
+                            <span className='text-[var(--primaryColor)]'><em><b>Donate</b></em></span> or  <span className='text-[var(--primaryColor)]'><em><b>Receive</b></em></span> as an INDIVIDUAL
                         </p>
                         <p className='text-white'>
-                            <span className='text-[var(--primaryColor)]'><em><b>Donate</b></em></span> or  <span className='text-[var(--primaryColor)]'><em><b>Receive</b></em></span> as an ORG/NGO.
+                            <span className='text-[var(--primaryColor)]'><em><b>Donate</b></em></span> or  <span className='text-[var(--primaryColor)]'><em><b>Receive</b></em></span> as an ORG/NGO
                         </p>
                     </div>
                 </div>

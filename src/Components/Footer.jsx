@@ -138,11 +138,11 @@ const Footer = () => {
       {/*============================================================================ */}
       {popUp &&
         (
-          <div className={`fixed flex items-center top-8 justify-center bg-[rgba(0,0,0,40%)] w-full h-screen`}>/
-            <div className='bg-white sm:w-1/2 h-[20rem] rounded-lg flex flex-col p-5 '>
+          <div className={`fixed flex items-center top-8 justify-center bg-[rgba(0,0,0,40%)] w-full h-screen`} onClick={() => setPopUp(false)}>/
+            <div className='bg-white sm:w-1/2 h-[20rem] rounded-lg flex flex-col p-5'>
               <button onClick={() => setPopUp(false)} className='ms-auto px-3 font-bold rounded-lg '>X</button>
-              <img src={logo} alt="logo" className='m-auto' />
-              <h1 className='text-4xl text-center m-auto'>Mobile App coming soon</h1>
+              <img src={logo} alt="logo" className='m-auto w-40 sm:w-1/4' />
+              <h1 className='text-2xl text-center m-auto'>Mobile App coming soon</h1>
             </div>
           </div>
         )

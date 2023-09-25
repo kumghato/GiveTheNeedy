@@ -26,13 +26,13 @@ const NavBarSide = () => {
                         <div className='flex lg:flex-col gap-10 justify-between'>
                             <h1 className='hidden lg:flex font-bold text-2xl'>Forum</h1>
                             <div className='lg:hidden w-full flex justify-evenly text-2xl'>
-                                <Link to={"/my/profile"}><VscAccount /></Link>
                                 <Link to={"/forum"} ><MdOutlineForum /></Link>
+                                <Link to={"/my/profile"}><VscAccount /></Link>
                                 <Link onClick={logout}><BiLogOut /></Link>
                             </div>
                             <div className='hidden lg:flex md:flex-col md:gap-10'>
-                                <Link to={"/my/profile"}>My Profile</Link>
                                 <Link to={"/forum"}>All Post</Link>
+                                <Link to={"/my/profile"}>My Profile</Link>
                                 <Link onClick={logout}>Logout</Link>
                             </div>
                         </div>
@@ -51,8 +51,8 @@ const NavBarSide = () => {
                             </div>
 
                             <div className='hidden md:flex md:flex-col md:gap-10'>
-                                <Link to={"/my/profile"}>My Profile</Link>
                                 <Link to={"/forum"}>All Post</Link>
+                                <Link to={"/my/profile"}>My Profile</Link>
                                 <Link onClick={() => { setPopUp(!popUp) }}>Login</Link>
                             </div>
                         </div>

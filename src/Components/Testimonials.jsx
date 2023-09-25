@@ -92,7 +92,12 @@ const Testimonials = () => {
         },
         {
             name: <><b>Imtizulu Jamir</b><br />Nagaland, India</>,
-            message: `" Give the needy" app will definitely bring all the people together and make this world a better place to live in, a home filled with so much love and support for each other.`,
+            message: `"Give the needy" app will definitely bring all the people together and make this world a better place to live in, a home filled with so much love and support for each other.`,
+            stars: 5,
+        },
+        {
+            name: <><b>Bobby Cash, Country Music Artist</b><br />Dehradun, India</>,
+            message: `GTN is a great initiative by young Zaiyigum, to make a positive difference in so many precious lives. My prayers and best wishes for it's launch a success!`,
             stars: 5,
         },
         // Add more testimonials as needed

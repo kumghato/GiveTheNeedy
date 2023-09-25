@@ -13,7 +13,6 @@ const LoginModal = ({ closeModal }, { openModal }) => {
         password: ""
     })
 
-
     const handleChangeUser = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
